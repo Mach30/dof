@@ -1,0 +1,7 @@
+= OSHW should support mashups
+J. Simmons <jrs@mach30.org>
+:revnumber: v0.1
+:revdate: 06-01-2018
+:revremark: First draft
+
+OSHW projects should support mashups and non-hardware dependencies.

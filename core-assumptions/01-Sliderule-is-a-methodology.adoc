@@ -1,0 +1,7 @@
+= Sliderule is a methodology
+J. Simmons <jrs@mach30.org>
+:revnumber: v0.1
+:revdate: 06-01-2018
+:revremark: First draft
+
+Sliderule is a methodology and we will present a reference architecture with implementation.

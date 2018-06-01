@@ -1,0 +1,7 @@
+= OSHW projects need build instructions
+J. Simmons <jrs@mach30.org>
+:revnumber: v0.1
+:revdate: 06-01-2018
+:revremark: First draft
+
+OSHW projects need assembly instructions along with their BoMs as a minimum definition of their source.
