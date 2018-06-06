@@ -1,0 +1,44 @@
+= DOF Methodology
+J. Simmons <jrs@mach30.org>
+:revnumber: v0.1
+:revdate: 06-05-2018
+:revremark: First draft
+
+== First Principles
+
+. OSHW should be developed in a manner like OSS
+. The basic building block of OSHW is a component
+. Components may be hardware or software
+. All components must be built by someone
+. Components may be built and acquired from a third party (designated COTS components) or built from source by the developer using them (designated as assemblies)
+. COTS components may be open or closed source, as they are built by a third party
+. Assembly components must be open source, as they are built by the developer of an open source project
+. Software components include firmware and applications (applications may run on or communicate with the OSHW project)
+. An OSHW project depends on its Assembly components, but not its COTS components; that is, it must embed the source of Assembly components within its own project structure 
+. An OSHW project requires both its Assembly and COTS components 
+. Hardware components of an OSHW project are listed in its Bill of Materials (BoM)
+. BoMs only define the components of the current project scope; Assembly components have their own independent BoMs 
+. OSHW (and OSS) projects must include build instructions as part of their "source"; in other words, a BoM or a collection of files with code is not sufficient to define an open source project
+
+== Derived Assumptions 
+
+. OSHW projects should support fork, branch, merge, and tag operations
+. OSHW projects (like modern OSS projects) should be composable at the component level
+. OSHW should use "packages" (think npm packages in Nodejs, gems in Ruby, and pipy modules in Python) as the unit of composition for hardware and software components 
+. A package should include
+.. BoM
+.. Build instructions 
+.. Digital design files for this package (e.g. cad files, code files)
+.. List of dependencies (hardware and software) - may be implemented in same list as required components, but must be identifiable as dependencies
+.. List of required components (hardware and software) - full list of required components can be a computed list by merging dependenc list with list of COTS components
+. A package should support all activities related to building the project up to and including the item defined in the package.  Examples include
+.. Generating a list of BoMs for all Assembly components and the package
+.. Generating a purchase list to build the project defined in this package 
+.. Generating build instructions for the project defined in this package
+. Therefor, every OSHW project is itself a package 
+
+== The Methodology 
+
+This methodology covers the process of documenting and sharing OSHW projects, it does not cover the art and science of design.  Clearly, each decision discussed below is the result of the hard work of the developer(s) contributing to the project.
+
+. TODO 
