@@ -26,7 +26,7 @@ J. Simmons <jrs@mach30.org>
 . OSHW projects (like modern OSS projects) should be composable at the component level
 . OSHW should use "packages" (think npm packages in Nodejs, gems in Ruby, and pipy modules in Python) as the unit of composition for hardware and software components 
 . A package should include
-.. BoM
+.. BoM data
 .. Build instructions 
 .. Digital design files for this package (e.g. cad files, code files)
 .. List of dependencies (hardware and software) - may be implemented in same list as required components, but must be identifiable as dependencies
@@ -35,7 +35,15 @@ J. Simmons <jrs@mach30.org>
 .. Generating a list of BoMs for all Assembly components and the package
 .. Generating a purchase list to build the project defined in this package 
 .. Generating build instructions for the project defined in this package
-. Therefor, every OSHW project is itself a package 
+. Therefore, every OSHW project is itself a package 
+//. There is a subset of data about a component (assemblies and COTS) which needs to be referenced in a variety of places (e.g. BoM, assembly instructions, operating instructions); this data is the component’s ID data and is defined as:
+//.. name
+//.. url (repository url for assembly components, vendor url for COTS components)
+//.. version (* for all or for not relevant?)
+//.. description
+//. A component is identified by its name, not its part number (part numbers are location dependent, names should be able to identify a part uniquely within a given project scope)
+// add material about component common elements, bom elements, and purchasing elements
+// add material about computed bom data (part numbers) and how cost data is separate and also computed
 
 == The Methodology 
 
@@ -43,7 +51,36 @@ This methodology covers the process of documenting and sharing OSHW projects, it
 
 === Developing Projects
 
-TODO 
+.Starting a Project
+. Create directory for new project source
+. Initialize a new package for this project in the project directory; package description must include 
+.. Project name - used to identify project when included as a dependency and to reference the project in documentation source
+.. Project version - used to identify project when included as a dependency and to reference the project in documentation source
+.. Project description - short description, used to give human readable name in BoM, instructions, etc
+. Create new repository for the project 
+. Commit project directory to repository
+
+.Adding a Component to a Project
+* If component is hardware and an assembly component
+.. If new component, follow steps for *Starting a Project*
+.. Add component to dependency list by its ID data
+.. Download required source for new component into dependency data (likely a folder)
+.. Add component data to BoM (name, quantity, etc)
+* If component is hardware and a COTS component
+.. Add component to COTS list by its ID data
+.. Add component data to BoM (name, quantity, etc)
+* If component is software and an assembly component
+.. If new component, follow steps for *Starting a Project*
+.. Add component to dependency list by its ID data
+.. Download required source for new component into dependency data (likely a folder)
+* If component is software and a COTS component
+.. Add component to COTS list by its ID data
+
+NOTE: Required digital design files should be stored under a _source_ directory in the package they belog to.
+
+TIP: Commit materials to repositories frequently to ensure data is available to other contributors and other projects.
+
+NOTE: Package management tools used with DOF need to include the concept of updating dependencies when new versions are released.
 
 === Generating BoMs
 
@@ -51,31 +88,35 @@ While BoMs are scoped at the level of the current package, it is helpful to prod
 
 ==== Generating BoM for Current Package
 
-Uses
+.Uses
+* BoM data 
+* List of required components
 
-- Package level BoMs (which likely use list of required components)
+TODO
 
 ==== Generating Project BoM Collection
 
-Uses
+.Uses
+* Dependency Lists
+* BoM data from packages in dependency heirarchy
 
-- Dependency List
-- BoMs from packages in dependency heirarchy
+. Generate a full project dependency list by walking the dependency graph defined by the project’s dependency lists at all levels of the project heirarchy
+. Create a new empty document
+. Create a new section for each project in the dependency list, and use the project’s BoM data to generate its BoM in this section per above
 
 === Generating Purchase List
 
+.Uses
+* Dependency Lists
+* BoM data from packages in dependency heirarch
+* List of COTS components (hardware and software) from packages in dependency heirarchy
+
 TODO
-
-Uses
-
-- Pacakge level BoMs
-- List of COTS components (hardware and software)
 
 === Generating Build Instructions
 
+.Uses
+* List of required components
+* Pacakges from dependencies
+
 TODO
-
-Uses
-
-- List of required components
-- Pacakges from dependencies
