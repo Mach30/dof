@@ -30,7 +30,7 @@ J. Simmons <jrs@mach30.org>
 .. Build instructions 
 .. Digital design files for this package (e.g. cad files, code files)
 .. List of dependencies (hardware and software) - may be implemented in same list as required components, but must be identifiable as dependencies
-.. List of required components (hardware and software) - full list of required components can be a computed list by merging dependenc list with list of COTS components
+.. List of required components (hardware and software) - full list of required components can be a computed list by merging dependency list with list of COTS components
 . A package should support all activities related to building the project up to and including the item defined in the package.  Examples include
 .. Generating a list of BoMs for all Assembly components and the package
 .. Generating a purchase list to build the project defined in this package 
@@ -41,4 +41,41 @@ J. Simmons <jrs@mach30.org>
 
 This methodology covers the process of documenting and sharing OSHW projects, it does not cover the art and science of design.  Clearly, each decision discussed below is the result of the hard work of the developer(s) contributing to the project.
 
-. TODO 
+=== Developing Projects
+
+TODO 
+
+=== Generating BoMs
+
+While BoMs are scoped at the level of the current package, it is helpful to produce a single document containing the collection of BoMs included within the project hierarchy (computed via dependencies).  So, we will first discuss generating the current scope BoM and then the collection of BoMs.
+
+==== Generating BoM for Current Package
+
+Uses
+
+- Package level BoMs (which likely use list of required components)
+
+==== Generating Project BoM Collection
+
+Uses
+
+- Dependency List
+- BoMs from packages in dependency heirarchy
+
+=== Generating Purchase List
+
+TODO
+
+Uses
+
+- Pacakge level BoMs
+- List of COTS components (hardware and software)
+
+=== Generating Build Instructions
+
+TODO
+
+Uses
+
+- List of required components
+- Pacakges from dependencies
