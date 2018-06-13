@@ -1,7 +1,7 @@
 = DOF Methodology
 J. Simmons <jrs@mach30.org>
-:revnumber: v0.1
-:revdate: 06-05-2018
+:revnumber: v0.2
+:revdate: 06-13-2018
 :revremark: First draft
 
 == First Principles
@@ -11,12 +11,11 @@ J. Simmons <jrs@mach30.org>
 . Components may be hardware or software
 . All components must be built by someone
 . Components may be built and acquired from a third party (designated COTS components) or built from source by the developer using them (designated as assemblies)
-. COTS components may be open or closed source, as they are built by a third party
+. COTS components may be open or closed source, as they are built by a third party (e.g. Aduinos are often included as open source COTS components)
 . Assembly components must be open source, as they are built by the developer of an open source project
 . Software components include firmware and applications (applications may run on or communicate with the OSHW project)
-. An OSHW project depends on its Assembly components, but not its COTS components; that is, it must embed the source of Assembly components within its own project structure 
-. An OSHW project requires both its Assembly and COTS components 
-. Hardware components of an OSHW project are listed in its Bill of Materials (BoM)
+. An OSHW project depends on its components, both its COTS and Assembly components
+. All components of an OSHW project are listed in its Bill of Materials (BoM)
 . BoMs only define the components of the current project scope; Assembly components have their own independent BoMs 
 . OSHW (and OSS) projects must include build instructions as part of their "source"; in other words, a BoM or a collection of files with code is not sufficient to define an open source project
 
@@ -29,21 +28,26 @@ J. Simmons <jrs@mach30.org>
 .. BoM data
 .. Build instructions 
 .. Digital design files for this package (e.g. cad files, code files)
-.. List of dependencies (hardware and software) - may be implemented in same list as required components, but must be identifiable as dependencies
-.. List of required components (hardware and software) - full list of required components can be a computed list by merging dependency list with list of COTS components
+.. List of dependencies (hardware/software, COTS/Assemblies)
 . A package should support all activities related to building the project up to and including the item defined in the package.  Examples include
-.. Generating a list of BoMs for all Assembly components and the package
+.. Generating BoMs for the package and its dependencies as needed
 .. Generating a purchase list to build the project defined in this package 
-.. Generating build instructions for the project defined in this package
+.. Generating build instructions for the project defined in this package (including any dependent build instructions)
 . Therefore, every OSHW project is itself a package 
-//. There is a subset of data about a component (assemblies and COTS) which needs to be referenced in a variety of places (e.g. BoM, assembly instructions, operating instructions); this data is the component’s ID data and is defined as:
-//.. name
-//.. url (repository url for assembly components, vendor url for COTS components)
-//.. version (* for all or for not relevant?)
-//.. description
-//. A component is identified by its name, not its part number (part numbers are location dependent, names should be able to identify a part uniquely within a given project scope)
-// add material about component common elements, bom elements, and purchasing elements
-// add material about computed bom data (part numbers) and how cost data is separate and also computed
+. BoMs are generated artificacts built from package level BoM data and information from packages included as dependencies
+. Therefore, if a component is listed in BoM data, it must have already been included as a dependency
+. BoM data consists of
+.. Component ID - pacakge level identifier for this component, used throughout the pacakge source to reference this component, allowing for consistent references in the event of changes to selected alternate part number
+.. Options List - list of verified/allowed/approved source IDs for component implementation (e.g. COTS options, sub-assembly); IDs correspond to ID in dependency list for this package
+.. Default Option Index - identifies which entry in the Options List is selected by default
+.. Quantity - number of copies of this component required to build this package, requires a unit of measure (e.g. items for a typical hardware component, physical unit for materials sold by length, weight, mass, or seat/install for software components)
+.. Short Description - human readable descripion suitable for inclusion in documentation 
+.. Notes - developer comments on this component
+. Examples of calculated and derived information in BoM
+.. project part numbers
+.. vendor part number
+.. purchasing information
+. Specific formats for generated BoMs are left to the discretion of DOF implementations
 
 == The Methodology 
 
@@ -61,22 +65,12 @@ This methodology covers the process of documenting and sharing OSHW projects, it
 . Commit project directory to repository
 
 .Adding a Component to a Project
-* If component is hardware and an assembly component
 .. If new component, follow steps for *Starting a Project*
 .. Add component to dependency list by its ID data
 .. Download required source for new component into dependency data (likely a folder)
-.. Add component data to BoM (name, quantity, etc)
-* If component is hardware and a COTS component
-.. Add component to COTS list by its ID data
-.. Add component data to BoM (name, quantity, etc)
-* If component is software and an assembly component
-.. If new component, follow steps for *Starting a Project*
-.. Add component to dependency list by its ID data
-.. Download required source for new component into dependency data (likely a folder)
-* If component is software and a COTS component
-.. Add component to COTS list by its ID data
+.. Add component data to BoM (id, options data, quantity, etc)
 
-NOTE: Required digital design files should be stored under a _source_ directory in the package they belog to.
+NOTE: Required digital design files should be stored under a _source_ directory in the package they belong to.
 
 TIP: Commit materials to repositories frequently to ensure data is available to other contributors and other projects.
 
@@ -90,9 +84,16 @@ While BoMs are scoped at the level of the current package, it is helpful to prod
 
 .Uses
 * BoM data 
-* List of required components
+* Dependency data
 
-TODO
+. Select initial part number and part number format (critical when generating overall project level part numbers) 
+. Iterate over BoM data, for each component
+.. Generate part number
+.. Select specific component source from Options List for any components with more than one option
+.. Read in component information from package for selected component source
+.. Combine package level info with BoM data and other calculated values to create an entry in the BoM
+. Write out human readable version of BoM
+. Save a cache of full calculated/derived BoM information for use in other source materials (e.g. purchase list, build instuctions)
 
 ==== Generating Project BoM Collection
 
@@ -102,14 +103,14 @@ TODO
 
 . Generate a full project dependency list by walking the dependency graph defined by the project’s dependency lists at all levels of the project heirarchy
 . Create a new empty document
-. Create a new section for each project in the dependency list, and use the project’s BoM data to generate its BoM in this section per above
+. Select part numbering scheme (e.g. per package part numbering or overall project level numbering) and part number format
+. Create a new section for each package in the dependency list with BoM data (typically Hardware Assemblies), and use the package BoM data to generate its BoM in this section per above
 
 === Generating Purchase List
 
 .Uses
 * Dependency Lists
-* BoM data from packages in dependency heirarch
-* List of COTS components (hardware and software) from packages in dependency heirarchy
+* Generated BoM information from Project BoM collection
 
 TODO
 
