@@ -1,7 +1,7 @@
 = DOF Methodology
 J. Simmons <jrs@mach30.org>
-:revnumber: v0.2
-:revdate: 06-13-2018
+:revnumber: v0.3
+:revdate: 06-14-2018
 :revremark: First draft
 
 == First Principles
@@ -46,8 +46,11 @@ J. Simmons <jrs@mach30.org>
 . Examples of calculated and derived information in BoM
 .. project part numbers
 .. vendor part number
-.. purchasing information
+.. component type (COTS vs Assembly)
 . Specific formats for generated BoMs are left to the discretion of DOF implementations
+. DOF uses component data to determine type of component (COTS vs Assembly, hardware vs software)
+.. If BoM data is present component is hardware, otherwise it is software
+.. If manufacturer data is present component is COTS, otherwise it is an Assembly
 
 == The Methodology 
 
@@ -112,7 +115,9 @@ While BoMs are scoped at the level of the current package, it is helpful to prod
 * Dependency Lists
 * Generated BoM information from Project BoM collection
 
-TODO
+TODO 
+
+NOTE: The purchase list only convers the full list of COTS components and their quanities.  Vendor selection, cost calculations, etc are beyond the scope of DOF itself as their are countless methods that could be used to make vendor level choices.  But, DOF purchase list data should support generating actual order lists.  Implememtations may choose whether to provide a limited set of methods or a plug-in infrastructure to give users the ability to customize the purchasing process.
 
 === Generating Build Instructions
 
