@@ -1,7 +1,7 @@
 = OSHW projects must account for access levels
 J. Simmons <jrs@mach30.org>
 :revnumber: v0.1
-:revdate: 06-01-2018
+:revdate: 09-24-2018
 :revremark: First draft
 
 _Based on contributions from Jeremy Wright._
