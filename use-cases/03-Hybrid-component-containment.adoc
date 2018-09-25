@@ -1,0 +1,11 @@
+= Hybrid component containment
+J. Simmons <jrs@mach30.org>
+:revnumber: v0.1
+:revdate: 09-24-2018
+:revremark: First draft
+
+== Remarks
+* some components (including ones developed for this project) come from their own repos and some components are contained in the project’s repo
+* most practical approach to encourage reuse and composition
+* balance between the extremes
+* this use case should be supported, this is where the majority of projects should end up

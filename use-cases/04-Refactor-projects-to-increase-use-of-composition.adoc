@@ -1,0 +1,47 @@
+= Refactor projects to increase use of composition
+J. Simmons <jrs@mach30.org>
+:revnumber: v0.1
+:revdate: 09-24-2018
+:revremark: First draft
+
+== Remarks
+* implemented by moving components to their own repo
+* adds complexity to support reuse and composition
+* need to ensure the added complexity is not a barrier to exercising this use case
+* this use case should be supported as it enables user-centric workflow
+.. start a project in a single repo
+.. work on project in its repo until inherent complexity of project warrants reuse or composition
+.. refactor one or more components into their own repos
+.. continue development
+
+== Supporting this use case
+=== Derived Requirements
+It must be super easy for user to exercise the "Refactor projects to increase use of composition" use case.
+
+"super easy" is defined as
+
+* minimize user effort to move component to its own repo
+* minimize user effort to make adjustments in current project to use component from its own repo
+
+=== Methodology Concepts
+* minimize effort to move component to its own repo by ensuring component specifications (e.g. data structures, files on disk) are the same regardless of where components are contained (in project repo or their own repo)
+** implications
+*** components in the project’s repo need their own directories
+*** nested components (e.g. sub-components of a component) are stored under their owning component in sub-directories so that they come along for the ride if the component is put in its own repo
+*** component directories follow the same structure as project directories
+*** components have their own package description data stored in the component directory
+* minimize effort to adjust current project by ensuring component inclusion has a specified search order that searches for components in the current repo and components that are included from other repos
+** implications
+*** based on lessons from nodejs, will not want to throw errors or warnings when their are multiple possible matching components in the search path, just use the first one (assumes a deterministic solution to finding the first one) - this allows users to reuse component names (*What does nodejs do?*)
+*** DOF tools are encouraged to automate this refactoring process which would look something like
+.... export component directory from project repo to untracked directory
+.... create new repo for component
+.... move exported files to component repo
+.... commit component to its new repo
+.... delete component directory from project directory (using repo commands)
+.... add new component repo location as a dependency for the project
+.... update project to get component from its repo
+.... run doc and code build process
+.... ask user to verify docs and built code
+.... ask user if they want to commit project
+

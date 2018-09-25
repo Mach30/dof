@@ -1,0 +1,12 @@
+= Adjust procect access level
+J. Simmons <jrs@mach30.org>
+:revnumber: v0.1
+:revdate: 09-24-2018
+:revremark: First draft
+
+_Based on contributions from Jeremy Wright._
+
+= Remarks
+* it needs to be possible to promote less accessible projects (or parts of those projects when they are in their own repos) to be more public/accessible
+* it needs to be possible to demote projects (or parts of those projects when they are in their own repos) to be less accessible
+* this use case should be supported as it promotes project evolution from restricted to more freely accessible
