@@ -70,6 +70,7 @@ This methodology covers the process of documenting and sharing OSHW projects, it
 .. Project name - used to identify project when included as a dependency and to reference the project in documentation source
 .. Project version - used to identify project when included as a dependency and to reference the project in documentation source
 .. Project description - short description, used to give human readable name in BoM, instructions, etc
+.. Project license - specifying a license should be considered a best practice for OSHW projects, so DOF should expect a license as part of the minimum spec for a package.
 . Create new repository for the project 
 . Commit project directory to repository
 
