@@ -1,0 +1,13 @@
+= Sliderule data is formatted for VCS
+J. Simmons <jrs@mach30.org>
+:revnumber: v0.1
+:revdate: 06-01-2018
+:revremark: First draft
+
+Sliderule data should be created/formatted to be managed in software version control systems (VCS).
+
+This is an architecture assertion.  It derives from the methodolgy requirement that all data for OSHW projects be stored in formats/systems that support diffing, merging, forking, branching, and tagging.
+
+Implementations may choose their own VCS and specific data formats.  Preference is given in the methodology to being able to diff (etc) on individual field basis.  This implies that implementations favor line oriented formats where each field of data can be placed on its own line since VCS systems diff (etc) on a per line basis.
+
+This assumption will be tested in the technical demos for Sliderule.

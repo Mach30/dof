@@ -1,0 +1,15 @@
+= Sliderule is loosely coupled
+J. Simmons <jrs@mach30.org>
+:revnumber: v0.2
+:revdate: 09-24-2018
+:revremark: First draft
+
+Sliderule is loosely coupled to the greatest degree possible.
+
+== Corrollary - Front Ends Should Be Independent from Repo Back Ends
+
+The ideal architecture would allow users to connect any front end (e.g. cli, desktop, web portal, apps) to any repo the front end can gain network access to.  Need to run things ultra secure, great.  Put a repo server (git, svn, whatever comes along in 5 years) behind a firewall, vpn in and use the desktop or cli clients.  Want web access for this setup, spin up a Sliderule container behind the firewall and connect it to your repo server.
+
+This independence also supports use cases around promoting or demoting security levels for content.  Users only need to ensure the content in question is stored in its own repo.  Then changing security levels is as simple as moving the content between repos or using the repo server’s access controls to lock it off/open it up.
+
+The ultimate realization of decoupling the front ends from the repo back ends is to support mix and match component sourcing.  For example, take a component hosted on github, another one from internal git server, and finally one from an svn server on SourceForge.  Let the users decide where to store the source, DOF implementations will help them integrate components into their project regardless.

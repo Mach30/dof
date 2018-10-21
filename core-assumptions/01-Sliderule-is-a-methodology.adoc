@@ -1,0 +1,27 @@
+= Sliderule is a methodology
+J. Simmons <jrs@mach30.org>
+:revnumber: v0.1
+:revdate: 06-01-2018
+:revremark: First draft
+
+// make this a quote block (in all assumptions docs)
+The goal of the Sliderule project is to define a methodology for OSHW projects along with a reference architecture and implementation(s).
+
+The birth and adoption of Agile methologies like Scrum and Kanban have shaped an entire generation of project management tools.  Designing around methodologies ensures developers have the right architecture and in turn the right implememtation for the problem at hand.
+
+As we embark on the development of a system to host OSHW projects, it seems a good time to ask the question, “What is the accepted OSHW methodology?”. Upon reflection, I am afraid the common practice boils down to:
+
+(insert meme - share all the things... somewhere)
+
+Which is not to say there hasn’t been great work done to develop and share best practices when it comes to OSHW (Alicia Gibbs’ book comes to mind - add link).  But, I am not aware of any *systematic approach outlining what needs to be shared, how it should be shared, and the relationships between the various kinds of shard content*.  This is what I am referring to when I say our goal needs to be to define a methodology.
+
+A good methodology is one that can survive the test of time even as architectures () and implementations change (is blockchain going to spawn the next AWS or Git).  A good methodology is also independent of tools.  Teams can implement Scrum with post it notes on a wall, so too should the methodolgy underlying Sliderule be something teams can implement with just basic tools (of course, it will be easier when they have Sliderule, but it should not be a requirement for following the methodology).
+
+This second point, method independence from tools, has a benefit for us as developers.  It means we can test out the methodology without developing any architecture or writing any code for Sliderule.  In other words, we can start iterating on key concepts for Sliderule immediately and learn lessons from actual tests.  I have set up a directory under the architecture analysis folder called technical-demos for these tests.
+
+One final thought.  We are now looking at three levels of development related to Sliderule.  In the interest of clear communications, I am listing them below (and giving names to them).
+
+.Three Levels of Development
+* Methodology: Distributed OSHW Framework (DOF)
+* Reference Architecture/Implementation: Sliderule
+* Initial Deployments: Open Design Engine, Space Decentral Platform

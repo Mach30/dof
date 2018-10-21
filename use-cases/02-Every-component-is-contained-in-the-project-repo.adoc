@@ -1,0 +1,14 @@
+= Every component is contained in the project’s repo
+J. Simmons <jrs@mach30.org>
+:revnumber: v0.1
+:revdate: 09-24-2018
+:revremark: First draft
+
+== Remarks
+* minimizes complexity as everything you need is in a single repo
+* makes reuse and composition all but impossible 
+* this use case should be supported - 
+** it is ideal for simple projects
+** should not force users to adopt the ivory tower ideal
+** *projects using this approach can always be refactored to move components to their own repos* -- _in fact, this is another use case, and is likely the prescribed starting point, so it needs to be super easy to refactor to move components into their own repo_
+

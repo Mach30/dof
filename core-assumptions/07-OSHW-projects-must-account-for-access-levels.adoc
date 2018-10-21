@@ -1,0 +1,18 @@
+= OSHW projects must account for access levels
+J. Simmons <jrs@mach30.org>
+:revnumber: v0.1
+:revdate: 09-24-2018
+:revremark: First draft
+
+_Based on contributions from Jeremy Wright._
+
+OSHW projects must account for access levels due to export controls and other security concerns.  
+
+OSHW project hosting needs to support at lesst 4 levels of access to account export controls and other security concerns. Starting from most open and going to least open:
+
+. Public
+. Export Controlled (EC)
+. Team (project admin level invite only)
+. Private (project admin level invite only)
+
+Public are repos that anybody on the Internet can see. EC is something that any individual or organization that passes the threshold of security checks can access. Mach 30 would need a process for that. Team would allow an organization like Copenhagen Suborbitals or Mach 30 to work on things internally prior to (or instead of) wider release, and would probably have some more team level granularity in the access controls. Private would cover things like individual EC licenses, NDAs, liability waivers, etc.

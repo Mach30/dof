@@ -1,0 +1,11 @@
+= Every component is coming from its own repo
+J. Simmons <jrs@mach30.org>
+:revnumber: v0.1
+:revdate: 09-24-2018
+:revremark: First draft
+
+== Remarks
+* maximizes reuse and composition
+* increases project complexity as every component must be tracked in its own repo and have its own configuration 
+* leads to repos spawning faster than tribbles 
+* this use case should be supported, it is the ivory tower ideal (make everything reusable) and was the only use case supported in initial drafts of the DOf methodolgy

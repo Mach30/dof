@@ -1,0 +1,15 @@
+= Generate per component parts lists from BoM data
+J. Simmons <jrs@mach30.org>
+:revnumber: v0.1
+:revdate: 10-13-2018
+:revremark: First draft
+
+= Remarks
+* BoM data needs to support the process of assembling a component
+* during component assembly, builders need to narrow their focus to just the component they are assembling (the rest of the project is a distraction at that moment)
+* therefore, builders need a way to extract a single component’s parts list identifying the list of selected sub-components, quantities, and their part number for reference in the assembly instructions.
+* this use case should be supported as it is an enabler for assembly of individual component
+
+= Implementation notes
+* when rendering per component parts lists in the context of a containing project, the individual parts lists should be identified by the selected option for the given component
+* example: Let’s say we have two options for a component and we have to build whichever one we choose.  Option A is a one piece implementation and option B is a two piece implementation.  When we generate the per component parts list, the title of this component’s parts list should change based (using the component source description and version number) based on which implementation is selected.  If option A is selected the title of the parts list would be "One Piece Widget v1".  And if option B was selected it would be "Two Piece Widget v2".

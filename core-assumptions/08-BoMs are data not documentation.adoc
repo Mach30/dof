@@ -1,0 +1,9 @@
+= BoMs are data, not documentation
+J. Simmons <jrs@mach30.org>
+:revnumber: v0.1
+:revdate: 10-13-2018
+:revremark: First draft
+
+When we say BoMs are the heart of open source hardware, we are not referring to some specific document or format of document.  We are referring to the design data specifying the source materials for the project (types, quanities, containment).  
+
+Taking a cue from Model Based Systems Engineering, we then format the BoM data into purpose specific views when we need to interact with that data (e.g. per component parts lists suitable for pulling parts from inventory before assembling an individual component).
