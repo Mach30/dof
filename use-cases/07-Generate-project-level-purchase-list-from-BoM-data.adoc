@@ -1,0 +1,10 @@
+= Generate project level purchase list from BoM data
+J. Simmons <jrs@mach30.org>
+:revnumber: v0.1
+:revdate: 10-13-2018
+:revremark: First draft
+
+= Remarks
+* one of the most important functions of BoM data is to ensure we have all of the materials on hand required to build the project
+* therefore we need a list of all COTS components/materials that need to be purchased to build every sub-component (all the way down) that is sorted by COTS component names and includes total quantity required to build all of the sub-components
+* this use case should be supported as it enables users to prepare for complete project builds, preventing the deeply annoying event of being 1 widget short of finishing a build (which is compounded if said widget has a week long lead time)
