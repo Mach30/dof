@@ -1,0 +1,6 @@
+id: 4
+actor: “OSHW Developer”
+behavior: “include external projects as elements of my project”
+rationale: “build upon previous engineering effort (my own or others’)”
+derivedFrom: “../1-StakeholderNeeds/1-OSHW_IsLikeOSS.yaml”
+example: “Using an Arduino Uno as the controller board for an OSHW robot project.”
