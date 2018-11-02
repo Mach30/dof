@@ -1,6 +1,8 @@
 id: 2
+name: “Fork OSHW”
 actor: “OSHW Developer”
 behavior: “fork OSHW projects”
 rationale: “modify the project source in my own epository”
-derivedFrom: “../1-StakeholderNeeds/1-OSHW_IsLikeOSS.yaml”
+derivedFrom: 
+- “1-StakeholderNeeds/3-OSHW_IsLikeOSS.yaml”
 example: “Forking a project to customize its design for my own purposes (e.g. swapping out a controller board, adjusting it to fit me).”

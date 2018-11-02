@@ -1,0 +1,5 @@
+id: 3
+name: “OSHW should be like OSS”
+statement: “Open Source Hardware should be like Open Source Software to the greatest degree possible (e.g. sharing, development, licensing).”
+derivedFrom: 
+- “1-StakeholderNeeds/1-OSHW_Definition.yaml“

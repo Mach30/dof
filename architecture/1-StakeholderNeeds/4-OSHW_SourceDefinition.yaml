@@ -1,0 +1,6 @@
+id: 4
+name: “OSHW Source Definition”
+statement: “The source of an OSHW project is its *Bill of Materials Data* (list of components and counts covering all parts which must be purchased to build the project), its *Assembly Instructions*, and any other supporting documentation (e.g. design files, schematics, operating instructions).”
+derivedFrom:
+- “1-StakeholderNeeds/1-OSHW_Definition.yaml”
+- “1-StakeholderNeeds/2-OSHW_Definition.yaml”
