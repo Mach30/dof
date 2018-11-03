@@ -1,0 +1,38 @@
+= Distributed OSHW Framework (DOF)
+J. Simmons <jrs@mach30.org>
+:revnumber: v1.0
+:revdate: {{generationDate}}
+
+// insert ifdef for github images to work
+
+== Introduction
+
+Mach 30 launched https://opendesignengine.net[Open Design Engine] (ODE) in 2012. Since then we have run our own OSHW projects on ODE, observed other groups host OSHW projects on ODE and other sites, and held numerous conversations on and offline about the nature of hosting OSHW projects.  Our conclusion after all these years and experience is the same one we held back in 2012:  the OSHW community is still searching for a project hosting solution that meets the needs of hardware projects (where documentation is part of the source code).
+
+What has changed is our approach to addressing OSHW project hosting.  This time we are starting with the development of a tool independent methodology for developing and sharing OSHW.  What do we mean by methodology?
+
+****
+Defining a systematic approach of what needs to be shared, how it should be shared, and the relationships between the various kinds of shared content. 
+****
+
+Note how developing a methodology is different from identifying best practices, covering case studies, and creating definitions.  A methodology is something one follows; it is a fully defined process.  And by targeting tool independence, we can aim for developing a solution that will stand the test of time, just as version control methods have lasted through cvs, svn, and now git.
+
+== The Pillars of the DOF
+
+The Distributed OSHW Framework (DOF) is built upon {{numStakeholderNeeds}} pillars.  All design decisions for DOF are ultimately derived from one or more of these pillars.
+
+// insert iteration and formatting to show the stakeholder needs
+
+== Methodology Documentation
+
+The methodology is being modeled in a series of YAML files under the `architecture` folder.  A script is then used to generate the DOF Architecture document and this readme.  See the `docs` folder for mataterial on the format of the architecture YAML files.
+
+Please feel free to join the conversation by posting questions/comments as issues in the http://dof.sliderule.io[DOF repository].
+
+== Related Projects
+
+sliderule-cli, sliderule, ode
+
+== Further Reading
+
+Alicia’s book, and other sources 
