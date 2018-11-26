@@ -1,0 +1,1 @@
+This file contains images utilized by the generated adoc files.
