@@ -1,8 +1,8 @@
 id: 3
-name: “Merge OSHW”
-actor: “OSHW Developer”
-behavior: “merge project source”
-rationale: “integrate changes from a branch or fork into my current source”
+name: "Merge OSHW"
+actor: "OSHW Developer"
+behavior: "merge project source"
+rationale: "integrate changes from a branch or fork into my current source"
 derivedFrom: 
-- “1-StakeholderNeeds/3-OSHW_IsLikeOSS.yaml”
-example: “Incorporating suggested source changes from a contributor who forked the project to develop a new feature for the project.”
+- "1-StakeholderNeeds/3-OSHW_IsLikeOSS.yaml"
+example: "Incorporating suggested source changes from a contributor who forked the project to develop a new feature for the project."
