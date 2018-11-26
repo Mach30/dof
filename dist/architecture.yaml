@@ -1,0 +1,103 @@
+elements:
+  1-StakeholderNeeds/1-OSWH_Definition.yaml: &ref_0
+    id: 1
+    name: OSHW Definition
+    statement: >-
+      OSHW projects should be developed and shared in accordance to the
+      https://www.oshwa.org/definition/[OSHW Definition].
+    derivedFrom: []
+  1-StakeholderNeeds/2-OSHW_Certification.yaml: &ref_1
+    id: 2
+    name: OSHW Certification
+    statement: >-
+      OSHW projects should be developed and shared in accordance to the
+      https://certification.oshwa.org/process.html[OSHW Certification process].
+    derivedFrom: []
+  1-StakeholderNeeds/3-OSHW_IsLikeOSS.yaml: &ref_2
+    id: 3
+    name: OSHW should be like OSS
+    statement: >-
+      Open Source Hardware should be like Open Source Software to the greatest
+      degree possible (e.g. sharing, development, licensing).
+    derivedFrom:
+      - 1-StakeholderNeeds/1-OSHW_Definition.yaml
+  1-StakeholderNeeds/4-OSHW_SourceDefinition.yaml: &ref_3
+    id: 4
+    name: OSHW Source Definition
+    statement: >-
+      The source of an OSHW project is its:  *Bill of Materials Data* (list of
+      components and counts covering all parts which must be purchased to build
+      the project), *Assembly Instructions* (complete list of instructions to
+      build the project from its purchased parts), and *Supporting
+      Documentation* (e.g. design files, schematics, operating instructions)
+    derivedFrom:
+      - 1-StakeholderNeeds/1-OSHW_Definition.yaml
+      - 1-StakeholderNeeds/2-OSHW_Definition.yaml
+  2-UserStories/1-BranchOSHW.yaml: &ref_4
+    id: 1
+    name: Branch OSHW
+    actor: OSHW Developer
+    behavior: use branches in the development of OSHW
+    rationale: modify the project source in parallel lines of development
+    derivedFrom:
+      - 1-StakeholderNeeds/2-OSHW_Certification.yaml
+      - 1-StakeholderNeeds/3-OSHW_IsLikeOSS.yaml
+    example: >-
+      Creating a v1 branch to preserve and maintain v1 source as part of OSHW
+      certification compliance.  New development can then happen on trunk or a
+      v2 branch.
+  2-UserStories/2-ForkOSHW.yaml: &ref_5
+    id: 2
+    name: Fork OSHW
+    actor: OSHW Developer
+    behavior: fork OSHW projects
+    rationale: modify the project source in my own epository
+    derivedFrom:
+      - 1-StakeholderNeeds/3-OSHW_IsLikeOSS.yaml
+    example: >-
+      Forking a project to customize its design for my own purposes (e.g.
+      swapping out a controller board, adjusting it to fit me).
+  2-UserStories/3-MergeOSHW.yaml: &ref_6
+    id: 3
+    name: Merge OSHW
+    actor: OSHW Developer
+    behavior: merge project source
+    rationale: integrate changes from a branch or fork into my current source
+    derivedFrom:
+      - 1-StakeholderNeeds/3-OSHW_IsLikeOSS.yaml
+    example: >-
+      Incorporating suggested source changes from a contributor who forked the
+      project to develop a new feature for the project.
+  2-UserStories/4-CompositionOfOSHW.yaml: &ref_7
+    id: 4
+    name: Composition of OSHW
+    actor: OSHW Developer
+    behavior: include external projects as elements of my project
+    rationale: build upon previous engineering effort (my own or others’)
+    derivedFrom:
+      - 1-StakeholderNeeds/3-OSHW_IsLikeOSS.yaml
+    example: Using an Arduino Uno as the controller board for an OSHW robot project.
+package:
+  name: dof
+  version: 0.1.0
+  description: Distributed OSHW Framework (DOF)
+  keywords:
+    - oshw
+  repository: 'https://github.com/Mach30/dof.git'
+  homepage: 'http://dof.sliderule.io'
+  author: J. Simmons <jrs@mach30.org>
+  license: CC-BY-4.0
+  dependencies:
+    js-yaml: ^3.12.0
+    liquidjs: ^6.1.1
+generationDate: 11/25/2018
+1-StakeholderNeeds:
+  - *ref_0
+  - *ref_1
+  - *ref_2
+  - *ref_3
+2-UserStories:
+  - *ref_4
+  - *ref_5
+  - *ref_6
+  - *ref_7

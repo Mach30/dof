@@ -1,7 +1,7 @@
-= {{architecture.package.description}}
-{{architecture.package.author}}
-:revnumber: v{{architecture.package.version}}
-:revdate: {{architecture.generationDate}}
+= Distributed OSHW Framework (DOF)
+J. Simmons <jrs@mach30.org>
+:revnumber: v0.1.0
+:revdate: 11/25/2018
 
 // github specific things
 ifdef::env-github[]
@@ -28,14 +28,29 @@ Note how developing a methodology is different from identifying best practices, 
 
 == The Pillars of the DOF
 
-The Distributed OSHW Framework (DOF) is built upon {{architecture['1-StakeholderNeeds'].size}} pillars.  All design decisions for DOF are ultimately derived from one or more of these pillars.
+The Distributed OSHW Framework (DOF) is built upon 4 pillars.  All design decisions for DOF are ultimately derived from one or more of these pillars.
 
-{% for need in architecture['1-StakeholderNeeds'] %}
-.{{need.id}}: {{need.name}}
+
+.1: OSHW Definition
 ****
-{{need.statement}}
+OSHW projects should be developed and shared in accordance to the https://www.oshwa.org/definition/[OSHW Definition].
 **** 
-{% endfor %}
+
+.2: OSHW Certification
+****
+OSHW projects should be developed and shared in accordance to the https://certification.oshwa.org/process.html[OSHW Certification process].
+**** 
+
+.3: OSHW should be like OSS
+****
+Open Source Hardware should be like Open Source Software to the greatest degree possible (e.g. sharing, development, licensing).
+**** 
+
+.4: OSHW Source Definition
+****
+The source of an OSHW project is its:  *Bill of Materials Data* (list of components and counts covering all parts which must be purchased to build the project), *Assembly Instructions* (complete list of instructions to build the project from its purchased parts), and *Supporting Documentation* (e.g. design files, schematics, operating instructions)
+**** 
+
 
 == Methodology Documentation
 
