@@ -79,7 +79,7 @@ elements:
     example: Using an Arduino Uno as the controller board for an OSHW robot project.
 package:
   name: dof
-  version: 0.1.0
+  version: 0.1.1
   description: Distributed OSHW Framework (DOF)
   keywords:
     - oshw
