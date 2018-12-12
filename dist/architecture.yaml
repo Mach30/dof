@@ -79,7 +79,7 @@ elements:
     example: Using an Arduino Uno as the controller board for an OSHW robot project.
 package:
   name: dof
-  version: 0.1.1
+  version: 0.1.2
   description: Distributed OSHW Framework (DOF)
   keywords:
     - oshw
@@ -90,7 +90,8 @@ package:
   dependencies:
     js-yaml: ^3.12.0
     liquidjs: ^6.1.1
-generationDate: 11/25/2018
+    minimist: ^1.2.0
+generationDate: 12/11/2018
 1-StakeholderNeeds:
   - *ref_0
   - *ref_1
