@@ -1,7 +1,5 @@
 var yaml = require('js-yaml');
 var fs   = require('fs');
-var Liquid = require('liquidjs');
-var engine = Liquid();
 
 var argv = require('minimist')(process.argv.slice(2));
 
@@ -9,17 +7,17 @@ var argv = require('minimist')(process.argv.slice(2));
 var projectPath = process.cwd();
 var architectureDirectoryName = 'architecture';
 var outputDirName = 'dist';
-var unifiedModelFile = 'architecture.yaml'
-var templateFileName = '';
+var unifiedModel = 'architecture.yaml'
+
 
 // handle arguments
 if (argv['h'] || argv['help']) {  // if asked for help, print it and exit
-    console.log('Usage: node buildDocs.js [options] <template_file>');
+    console.log('Usage: node buildUnifiedModel.js [options]');
     console.log('--help, -h             Print the usage message and exit');
     console.log('--projectPath=<Path/To/Project/>                     (default=CWD)');
     console.log('--archDirName=<directory_with_architecture_models>   (default=architecture)');
     console.log('--outputDirName=<directory_to_write_output_files>    (default=dist');
-    console.log('--unifiedModelFile=<filename_of_unified_model>       (default=architecture.yaml');
+    console.log('--unifiedModel=<filename_of_unified_model>           (default=architecture.yaml');
     process.exit();
 } else { // otherwise process arguments
     if ('projectPath' in argv) 
@@ -31,17 +29,9 @@ if (argv['h'] || argv['help']) {  // if asked for help, print it and exit
     if ('outputDirName' in argv)
         outputDirName = argv['outputDirName'];
     
-    if ('unifiedModelFile' in argv)
-        unifiedModelFile = argv['unifiedModelFile'];
+    if ('unifiedModel' in argv)
+    unifiedModel = argv['unifiedModel'];
 }
-
-if ('_' in argv) {
-    templateFileName = argv['_'][0];
-} else {
-    console.log('Must supply template file name');
-    process.exit(1);
-}
-
 
 var architecturePath = projectPath + '/' + architectureDirectoryName;
 var architectureContents = '';
@@ -73,13 +63,7 @@ try {
     console.log(e);
 }
 
-fs.writeFileSync(projectPath + '/' + outputDirName + '/' + unifiedModelFile, yaml.safeDump(architecture));
+var unifiedModelFileName = projectPath + '/' + outputDirName + '/' + unifiedModel;
+fs.writeFileSync(unifiedModelFileName, yaml.safeDump(architecture));
 
-var templateFile = fs.readFileSync(projectPath + '/' + templateFileName, 'utf8');
-engine
-    .parseAndRender(templateFile, {architecture: architecture})
-    .then(function(fulfilled) {
-        fs.writeFileSync(projectPath + '/' + templateFileName.replace('.liquid', ''), fulfilled);
-    }).catch(function(e) {
-        console.log(e);
-    });
+console.log('Unified Model ' + unifiedModelFileName + ' built');
