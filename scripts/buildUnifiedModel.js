@@ -30,7 +30,7 @@ if (argv['h'] || argv['help']) {  // if asked for help, print it and exit
         outputDirName = argv['outputDirName'];
     
     if ('unifiedModel' in argv)
-    unifiedModel = argv['unifiedModel'];
+        unifiedModel = argv['unifiedModel'];
 }
 
 var architecturePath = projectPath + '/' + architectureDirectoryName;
