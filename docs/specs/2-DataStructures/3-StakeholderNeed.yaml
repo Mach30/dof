@@ -1,0 +1,17 @@
+name: Stakeholder Need
+purpose: Capture statements of need from the perspective of system stakeholders identifying the system to be developed.  Stakeholder needs do not need to be strictly testable.  Later analysis will develop verifiable requirements from the stakeholder needs.
+elements:
+ - id:
+    type: integer
+    description: numeric identifier for the stakeholder need in documentation and conversation
+ - name:
+    type: string
+    description: human readable identifier string summarizing the stakeholder need
+ - statement:
+    type: string
+    description: record of the actual statement of the stakeholder need
+ - derivedFrom:
+    type: list(string)
+    description: list of strings, each value in the list is path to yaml model file describing ancestor; path is relative to architecture root (no leading dots)
+derivedFrom:
+ - 1-Reference/1-StakeHolderNeedsAndRequirements.yaml

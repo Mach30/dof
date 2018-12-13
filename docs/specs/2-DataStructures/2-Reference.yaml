@@ -1,0 +1,10 @@
+name: Reference
+purpose: Provide data required to cite sources
+elements:
+ - title:
+    type: string
+    description: title of the reference
+ - url:
+    type: string
+    description: For web based references, URL needed to access the reference
+derivedFrom: []
