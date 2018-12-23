@@ -1,10 +1,17 @@
 name: Reference
 purpose: Provide data required to cite sources
-elements:
- - title:
+template: |
+  title: {{title}}
+  url: {{url}}
+elements: 
+  - key: title
     type: string
+    itemType: ''
     description: title of the reference
- - url:
+    derivedFrom: []
+  - key: url
     type: string
+    itemType: ''
     description: For web based references, URL needed to access the reference
+    derivedFrom: []
 derivedFrom: []

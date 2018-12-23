@@ -1,0 +1,35 @@
+name: Element
+purpose: Provides specification for an individual element in a Data Structure
+template: |
+  key: {{key}}
+  type: {{type}}
+  itemType: {{itemType}}
+  description: {{description}}
+  derivedFrom: {{derivedFrom}}
+elements:
+  - key: key
+    type: string
+    itemType: ''
+    description: Dictionary key to reference the element
+    derivedFrom: []
+  - key: type
+    type: string
+    itemType: ''
+    description: Element type, may be a base type (e.g. string, int) or a path to a Data Structure
+    derivedFrom: []
+  - key: itemType
+    type: string
+    itemType: ''
+    description: Used when the type of the element is a list; defines the content type of the list.  Can be a base type or a path to a Data Structure.  Otherwise it is an empty string.
+    derivedFrom: []
+  - key: description
+    type: string
+    itemType: ''
+    description: Provides commentary and instructions for the element
+    derivedFrom: []
+  - key: derivedFrom
+    type: list
+    itemType: string
+    description: List of paths to model files that this element is related to by analysis results and design decisions
+    derivedFrom: []
+derivedFrom: []

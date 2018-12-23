@@ -1,25 +1,37 @@
 name: Data Structure
 purpose: Define storage format for data used in an architecture
+template: |
+  name: {{name}}
+  purpose: {{purpose}}
+  template: |
+    {{template}}
+  elements: 
+    - {{element}}
+  derivedFrom: {{derivedFrom}}
 elements:
- - name:
+  - key: name
     type: string
-    description: element name
- - purpose:
+    itemType: ''
+    description: Human readable name of the Data Structure
+    derivedFrom: []
+  - key: purpose
     type: string
-    description: the role of the data structure in the architecture
- - elements:
-    type: list(dictionary)
-    dictionarySpec:
-      key: name of element
-      data:
-      - type:
-          type: string
-          description: type of data [integer | float | string | list(type in list) | dictionary]. dictionaries always followed by dictionary spec element defining keys and data
-      - description:    
-          type: string
-          description: explanation of the element 
-    description: list of individual data elements in the data structure, each element is a dictionary
- - derivedFrom:
-    type: list(string)
-    description: list of strings, each value in the list is path to yaml model file describing ancestor; path is relative to architecture root (no leading dots)
-derivedFrom: [] 
+    itemType: ''
+    description: Provides specification for an individual Data Structure
+    derivedFrom: []
+  - key: template
+    type: object
+    itemType: ''
+    description: Object representation of the Data Structure with content defined in Liquid templating language. 
+    derivedFrom: []
+  - key: elements
+    type: list
+    itemType: '2-DataStructures/1-Element.yaml'
+    description: Definition of the data in the Data Structure
+    derivedFrom: []
+  - key: derivedFrom
+    type: string
+    itemType: ''
+    description: List of paths to model files that this Data Structure is related to by analysis results and design decisions
+    derivedFrom: []
+derivedFrom: []
