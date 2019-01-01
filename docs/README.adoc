@@ -1,0 +1,297 @@
+= YAML Architecture Modeling
+J. Simmons <jrs@mach30.org>
+:revnumber: v0.1.1
+:revdate: 1/1/2019
+
+// github specific things
+ifdef::env-github[]
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+//:imagesdir: https://raw.githubusercontent.com/Mach30/dof/master/dist/images
+endif::[]
+
+// non-github specific things
+ifndef::env-github[]
+:imagesdir: ./images
+endif::[]
+
+== Introduction
+This document covers how the file formats for the *YAML Architecture Modeling* tools.  Future additions to the documentation will cover model usage including document and test generation.
+
+== Data Structures
+This section covers each data structure type in the *YAML Architecture Modeling*.
+
+
+=== Element
+*Purpose:* Provide specification for an individual element in a Data Structure
+
+.Element Template
+----
+key: {{key}}
+type: {{type}}
+itemType: {{itemType}}
+description: {{description}}
+derivedFrom: {{derivedFrom}}
+
+----
+
+.Element Specification
+|===
+|Field |Type |Item Type |Description |Source
+
+
+|key
+|string
+
+|
+
+|Dictionary key to reference the element
+
+| 
+
+
+
+|type
+|string
+
+|
+
+|Element type, may be a base type (e.g. string, int) or a path to a Data Structure
+
+| 
+
+
+
+|itemType
+|string
+
+|
+
+|Used when the type of the element is a list; defines the content type of the list.  Can be a base type or a path to a Data Structure.  Otherwise it is an empty string.
+
+| 
+
+
+
+|description
+|string
+
+|
+
+|Provides commentary and instructions for the element
+
+| 
+
+
+
+|derivedFrom
+|list
+
+|string
+
+|List of paths to model files that this element is related to by analysis results and design decisions
+
+| 
+
+
+
+|===
+
+
+
+
+=== Data Structure
+*Purpose:* Define storage format for data used in an architecture
+
+.Data Structure Template
+----
+name: {{name}}
+purpose: {{purpose}}
+template: |
+  {{template}}
+elements: 
+  - {{element}}
+derivedFrom: {{derivedFrom}}
+
+----
+
+.Data Structure Specification
+|===
+|Field |Type |Item Type |Description |Source
+
+
+|name
+|string
+
+|
+
+|Human readable name of the Data Structure
+
+| 
+
+
+
+|purpose
+|string
+
+|
+
+|Provides specification for an individual Data Structure
+
+| 
+
+
+
+|template
+|object
+
+|
+
+|Object representation of the Data Structure with content defined in Liquid templating language.
+
+| 
+
+
+
+|elements
+|list
+
+|Element
+
+|Definition of the data in the Data Structure
+
+| 
+
+
+
+|derivedFrom
+|list
+
+|string
+
+|List of paths to model files that this Data Structure is related to by analysis results and design decisions
+
+| 
+
+
+
+|===
+
+
+
+
+=== Reference
+*Purpose:* Provide data required to cite sources
+
+.Reference Template
+----
+title: {{title}}
+url: {{url}}
+
+----
+
+.Reference Specification
+|===
+|Field |Type |Item Type |Description |Source
+
+
+|title
+|string
+
+|
+
+|title of the reference
+
+| 
+
+
+
+|url
+|string
+
+|
+
+|For web based references, URL needed to access the reference
+
+| 
+
+
+
+|===
+
+
+
+
+=== Stakeholder Need
+*Purpose:* Capture statements of need from the perspective of system stakeholders identifying the system to be developed.  Stakeholder needs do not need to be strictly testable.  Later analysis will develop verifiable requirements from the stakeholder needs.
+
+.Stakeholder Need Template
+----
+id: {{id}}
+name: {{name}}
+statement: {{statement}}
+derivedFrom: {{derivedFrom}}
+
+----
+
+.Stakeholder Need Specification
+|===
+|Field |Type |Item Type |Description |Source
+
+
+|id
+|integer
+
+|
+
+|Auto-increment identification number for the Stakeholder Need
+
+| 
+
+
+
+|name
+|string
+
+|
+
+|Human readable (descriptive) name for the Stakeholder Need
+
+| 
+
+
+
+|statement
+|string
+
+|
+
+|The actual statement of the Stakeholder Need
+
+| 
+
+
+
+|derivedFrom
+|list
+
+|string
+
+|List of paths to model files that this Stakeholder Need is related to by analysis results and design decisions
+
+| 
+
+
+
+|===
+
+
+.References
+
+* https://www.sebokwiki.org/wiki/Stakeholder_Needs_and_Requirements[Stakeholder Needs and Requirements]
+
+
+

@@ -1,0 +1,65 @@
+= {{architecture.package.description}}
+{{architecture.package.author}}
+:revnumber: v{{architecture.package.version}}
+:revdate: {{architecture.generationDate}}
+
+// github specific things
+ifdef::env-github[]
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+//:imagesdir: https://raw.githubusercontent.com/Mach30/dof/master/dist/images
+endif::[]
+
+// non-github specific things
+ifndef::env-github[]
+:imagesdir: ./images
+endif::[]
+
+== Introduction
+This document covers how the file formats for the *{{architecture.package.description}}* tools.  Future additions to the documentation will cover model usage including document and test generation.
+
+== Data Structures
+This section covers each data structure type in the *{{architecture.package.description}}*.
+
+{% for ds in architecture['2-DataStructures'] %}
+=== {{ds.name}}
+*Purpose:* {{ds.purpose}}
+
+.{{ds.name}} Template
+----
+{{ds.template}}
+----
+
+.{{ds.name}} Specification
+|===
+|Field |Type |Item Type |Description |Source
+
+{% for field in ds['elements'] %}
+|{{field.key}}
+|{{field.type}}
+{% if architecture['elements'][field.itemType].name %}
+|{{architecture['elements'][field.itemType].name}}
+{% else %}
+|{{field.itemType}}
+{% endif %}
+|{{field.description}}
+{% if field.derivedFrom.length > 0 %}
+|{{field.derivedFrom}}
+{% else %}
+| 
+{% endif %}
+
+{% endfor %}
+|===
+
+{% if ds['derivedFrom'].length > 0 %}
+.References
+{% for reference in ds['derivedFrom'] %}
+* {{architecture['elements'][reference].url}}[{{architecture['elements'][reference].title}}]
+{% endfor %}
+{% endif %}
+
+{% endfor %}
