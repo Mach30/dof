@@ -1,5 +1,5 @@
 name: Element
-purpose: Provides specification for an individual element in a Data Structure
+purpose: Provide specification for an individual element in a Data Structure
 template: |
   key: {{key}}
   type: {{type}}

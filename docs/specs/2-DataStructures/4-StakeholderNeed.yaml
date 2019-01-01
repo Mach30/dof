@@ -16,10 +16,15 @@ elements:
     itemType: ''
     description: Human readable (descriptive) name for the Stakeholder Need
     derivedFrom: []
-  - ey: derivedFrom
+  - key: statement
+    type: string
+    itemType: ''
+    description: The actual statement of the Stakeholder Need
+    derivedFrom: []
+  - key: derivedFrom
     type: list
     itemType: string
     description: List of paths to model files that this Stakeholder Need is related to by analysis results and design decisions
     derivedFrom: []
 derivedFrom:
- - 1-Reference/1-StakeHolderNeedsAndRequirements.yaml
+ - 1-References/1-StakeHolderNeedsAndRequirements.yaml

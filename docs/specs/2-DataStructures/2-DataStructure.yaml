@@ -30,8 +30,8 @@ elements:
     description: Definition of the data in the Data Structure
     derivedFrom: []
   - key: derivedFrom
-    type: string
-    itemType: ''
+    type: list
+    itemType: string
     description: List of paths to model files that this Data Structure is related to by analysis results and design decisions
     derivedFrom: []
 derivedFrom: []

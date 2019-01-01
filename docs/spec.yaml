@@ -2,81 +2,149 @@ elements:
   1-References/1-StakeHolderNeedsAndRequirements.yaml: &ref_0
     title: Stakeholder Needs and Requirements
     url: 'https://www.sebokwiki.org/wiki/Stakeholder_Needs_and_Requirements'
-  2-DataStructures/1-DataStructure.yaml: &ref_1
+  2-DataStructures/1-Element.yaml: &ref_1
+    name: Element
+    purpose: Provide specification for an individual element in a Data Structure
+    template: |
+      key: {{key}}
+      type: {{type}}
+      itemType: {{itemType}}
+      description: {{description}}
+      derivedFrom: {{derivedFrom}}
+    elements:
+      - key: key
+        type: string
+        itemType: ''
+        description: Dictionary key to reference the element
+        derivedFrom: []
+      - key: type
+        type: string
+        itemType: ''
+        description: >-
+          Element type, may be a base type (e.g. string, int) or a path to a
+          Data Structure
+        derivedFrom: []
+      - key: itemType
+        type: string
+        itemType: ''
+        description: >-
+          Used when the type of the element is a list; defines the content type
+          of the list.  Can be a base type or a path to a Data Structure. 
+          Otherwise it is an empty string.
+        derivedFrom: []
+      - key: description
+        type: string
+        itemType: ''
+        description: Provides commentary and instructions for the element
+        derivedFrom: []
+      - key: derivedFrom
+        type: list
+        itemType: string
+        description: >-
+          List of paths to model files that this element is related to by
+          analysis results and design decisions
+        derivedFrom: []
+    derivedFrom: []
+  2-DataStructures/2-DataStructure.yaml: &ref_2
     name: Data Structure
     purpose: Define storage format for data used in an architecture
+    template: |
+      name: {{name}}
+      purpose: {{purpose}}
+      template: |
+        {{template}}
+      elements: 
+        - {{element}}
+      derivedFrom: {{derivedFrom}}
     elements:
-      - name:
-          type: string
-          description: element name
-      - purpose:
-          type: string
-          description: the role of the data structure in the architecture
-      - elements:
-          type: list(dictionary)
-          dictionarySpec:
-            key: name of element
-            data:
-              - type:
-                  type: string
-                  description: >-
-                    type of data [integer | float | string | list(type in list)
-                    | dictionary]. dictionaries always followed by dictionary
-                    spec element defining keys and data
-              - description:
-                  type: string
-                  description: explanation of the element
-          description: >-
-            list of individual data elements in the data structure, each element
-            is a dictionary
-      - derivedFrom:
-          type: list(string)
-          description: >-
-            list of strings, each value in the list is path to yaml model file
-            describing ancestor; path is relative to architecture root (no
-            leading dots)
+      - key: name
+        type: string
+        itemType: ''
+        description: Human readable name of the Data Structure
+        derivedFrom: []
+      - key: purpose
+        type: string
+        itemType: ''
+        description: Provides specification for an individual Data Structure
+        derivedFrom: []
+      - key: template
+        type: object
+        itemType: ''
+        description: >-
+          Object representation of the Data Structure with content defined in
+          Liquid templating language.
+        derivedFrom: []
+      - key: elements
+        type: list
+        itemType: 2-DataStructures/1-Element.yaml
+        description: Definition of the data in the Data Structure
+        derivedFrom: []
+      - key: derivedFrom
+        type: list
+        itemType: string
+        description: >-
+          List of paths to model files that this Data Structure is related to by
+          analysis results and design decisions
+        derivedFrom: []
     derivedFrom: []
-  2-DataStructures/2-Reference.yaml: &ref_2
+  2-DataStructures/3-Reference.yaml: &ref_3
     name: Reference
     purpose: Provide data required to cite sources
+    template: |
+      title: {{title}}
+      url: {{url}}
     elements:
-      - title:
-          type: string
-          description: title of the reference
-      - url:
-          type: string
-          description: 'For web based references, URL needed to access the reference'
+      - key: title
+        type: string
+        itemType: ''
+        description: title of the reference
+        derivedFrom: []
+      - key: url
+        type: string
+        itemType: ''
+        description: 'For web based references, URL needed to access the reference'
+        derivedFrom: []
     derivedFrom: []
-  2-DataStructures/3-StakeholderNeed.yaml: &ref_3
+  2-DataStructures/4-StakeholderNeed.yaml: &ref_4
     name: Stakeholder Need
     purpose: >-
       Capture statements of need from the perspective of system stakeholders
       identifying the system to be developed.  Stakeholder needs do not need to
       be strictly testable.  Later analysis will develop verifiable requirements
       from the stakeholder needs.
+    template: |
+      id: {{id}}
+      name: {{name}}
+      statement: {{statement}}
+      derivedFrom: {{derivedFrom}}
     elements:
-      - id:
-          type: integer
-          description: >-
-            numeric identifier for the stakeholder need in documentation and
-            conversation
-      - name:
-          type: string
-          description: human readable identifier string summarizing the stakeholder need
-      - statement:
-          type: string
-          description: record of the actual statement of the stakeholder need
-      - derivedFrom:
-          type: list(string)
-          description: >-
-            list of strings, each value in the list is path to yaml model file
-            describing ancestor; path is relative to architecture root (no
-            leading dots)
+      - key: id
+        type: integer
+        itemType: ''
+        description: Auto-increment identification number for the Stakeholder Need
+        derivedFrom: []
+      - key: name
+        type: string
+        itemType: ''
+        description: Human readable (descriptive) name for the Stakeholder Need
+        derivedFrom: []
+      - key: statement
+        type: string
+        itemType: ''
+        description: The actual statement of the Stakeholder Need
+        derivedFrom: []
+      - key: derivedFrom
+        type: list
+        itemType: string
+        description: >-
+          List of paths to model files that this Stakeholder Need is related to
+          by analysis results and design decisions
+        derivedFrom: []
     derivedFrom:
-      - 1-Reference/1-StakeHolderNeedsAndRequirements.yaml
+      - 1-References/1-StakeHolderNeedsAndRequirements.yaml
 package:
   name: yam
-  version: 0.1.0
+  version: 0.1.1
   description: YAML Architecture Modeling
   keywords: []
   repository: ''
@@ -84,10 +152,11 @@ package:
   author: J. Simmons <jrs@mach30.org>
   license: CC-BY-4.0
   dependencies: {}
-generationDate: 12/12/2018
+generationDate: 1/1/2019
 1-References:
   - *ref_0
 2-DataStructures:
   - *ref_1
   - *ref_2
   - *ref_3
+  - *ref_4
