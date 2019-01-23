@@ -1,0 +1,28 @@
+name: User Story
+purpose: TODO
+template: |
+  id: {{id}}
+  name: {{name}}
+  actor: {{actor}}
+  behavior: {{behavior}}
+  rationale: {{rationale}}
+  derivedFrom: {{derivedFrom}}
+  example: {{example}}
+elements: 
+  - key: id
+    type: integer
+    itemType: ''
+    description: Auto-increment identification number for the User Story
+    derivedFrom: []
+  - key: name
+    type: string
+    itemType: ''
+    description: Human readable (descriptive) name for the User Story
+    derivedFrom: []
+  - key: actor
+    type: string
+    itemType: ''
+    description: TODO
+    derivedFrom: []
+derivedFrom:
+ - TODO
