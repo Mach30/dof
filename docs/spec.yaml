@@ -2,7 +2,17 @@ elements:
   1-References/1-StakeHolderNeedsAndRequirements.yaml: &ref_0
     title: Stakeholder Needs and Requirements
     url: 'https://www.sebokwiki.org/wiki/Stakeholder_Needs_and_Requirements'
-  2-DataStructures/1-Element.yaml: &ref_1
+  1-References/2-WritingUserStories_ExamplesAndTemplates.yaml: &ref_1
+    title: 'Writing User Stories, Examples and Templates In Agile Methodologies'
+    url: >-
+      https://www.yodiz.com/blog/writing-user-stories-examples-and-templates-in-agile-methodologies/
+  1-References/3-UserStories_AtlassianAgileCoach.yaml: &ref_2
+    title: User Stories
+    url: 'https://www.atlassian.com/agile/project-management/user-stories'
+  1-References/4-HowToWrite_a_UserStory.yaml: &ref_3
+    title: How to Write a User Story
+    url: 'http://www.payton-consulting.com/write-user-story/'
+  2-DataStructures/1-Element.yaml: &ref_4
     name: Element
     purpose: Provide specification for an individual element in a Data Structure
     template: |
@@ -45,7 +55,7 @@ elements:
           analysis results and design decisions
         derivedFrom: []
     derivedFrom: []
-  2-DataStructures/2-DataStructure.yaml: &ref_2
+  2-DataStructures/2-DataStructure.yaml: &ref_5
     name: Data Structure
     purpose: Define storage format for data used in an architecture
     template: |
@@ -87,7 +97,7 @@ elements:
           analysis results and design decisions
         derivedFrom: []
     derivedFrom: []
-  2-DataStructures/3-Reference.yaml: &ref_3
+  2-DataStructures/3-Reference.yaml: &ref_6
     name: Reference
     purpose: Provide data required to cite sources
     template: |
@@ -105,7 +115,7 @@ elements:
         description: 'For web based references, URL needed to access the reference'
         derivedFrom: []
     derivedFrom: []
-  2-DataStructures/4-StakeholderNeed.yaml: &ref_4
+  2-DataStructures/4-StakeholderNeed.yaml: &ref_7
     name: Stakeholder Need
     purpose: >-
       Capture statements of need from the perspective of system stakeholders
@@ -142,7 +152,7 @@ elements:
         derivedFrom: []
     derivedFrom:
       - 1-References/1-StakeHolderNeedsAndRequirements.yaml
-  2-DataStructures/5-UserStories.yaml: &ref_5
+  2-DataStructures/5-UserStories.yaml: &ref_8
     name: User Story
     purpose: TODO
     template: |
@@ -167,24 +177,35 @@ elements:
       - key: actor
         type: string
         itemType: ''
-        description: TODO
+        description: >-
+          Identifies the subject of the user story (the end user), e.g. "As a
+          <actor>, I ..."
         derivedFrom: []
+      - key: behavior
+        type: string
+        itemType: ''
+        description: >-
+          Defines the objective of the user story in an implementation free
+          manner (the intent), e.g. "want to <behavior> ..."
+        dereivedFrom: []
+      - key: rationale
+        type: string
+        itemType: ''
+        description: >-
+          Identifies why the actor desires the behavior (the benefit/value for
+          the user), e.g. "so that I can <rationale>."
+        derivedFrom: []
+      - key: example
+        type: string
+        itemType: ''
+        description: One to two sentences describing an application of this user story
     derivedFrom:
-      - TODO
-  2-DataStructures/test.out: &ref_6
-    name:
-      '[object Object]': null
-    purpose:
-      '[object Object]': null
-    template: |
-      {{template}}
-    elements:
-      - '[object Object]': null
-    derivedFrom:
-      '[object Object]': null
+      - 1-References/2-WritingUserStories_ExamplesAndTemplates.yaml
+      - 1-References/3-UserStories_AtlassianAgileCoach.yaml
+      - 1-References/4-HowToWrite_a_UserStory.yaml
 package:
   name: yam
-  version: 0.1.1
+  version: 0.1.2
   description: YAML Architecture Modeling
   keywords: []
   repository: ''
@@ -195,10 +216,12 @@ package:
 generationDate: 2/7/2019
 1-References:
   - *ref_0
-2-DataStructures:
   - *ref_1
   - *ref_2
   - *ref_3
+2-DataStructures:
   - *ref_4
   - *ref_5
   - *ref_6
+  - *ref_7
+  - *ref_8

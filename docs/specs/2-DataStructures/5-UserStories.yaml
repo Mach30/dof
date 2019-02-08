@@ -22,7 +22,23 @@ elements:
   - key: actor
     type: string
     itemType: ''
-    description: TODO
+    description: Identifies the subject of the user story (the end user), e.g. "As a <actor>, I ..."
     derivedFrom: []
+  - key: behavior
+    type: string
+    itemType: ''
+    description: Defines the objective of the user story in an implementation free manner (the intent), e.g. "want to <behavior> ..."
+    dereivedFrom: []
+  - key: rationale
+    type: string
+    itemType: ''
+    description: Identifies why the actor desires the behavior (the benefit/value for the user), e.g. "so that I can <rationale>."
+    derivedFrom: []
+  - key: example
+    type: string
+    itemType: ''
+    description: One to two sentences describing an application of this user story
 derivedFrom:
- - TODO
+ - 1-References/2-WritingUserStories_ExamplesAndTemplates.yaml
+ - 1-References/3-UserStories_AtlassianAgileCoach.yaml
+ - 1-References/4-HowToWrite_a_UserStory.yaml

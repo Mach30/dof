@@ -1,6 +1,6 @@
 = YAML Architecture Modeling
 J. Simmons <jrs@mach30.org>
-:revnumber: v0.1.1
+:revnumber: v0.1.2
 :revdate: 2/7/2019
 
 // github specific things
@@ -343,7 +343,40 @@ example: {{example}}
 
 |
 
-|TODO
+|Identifies the subject of the user story (the end user), e.g. "As a <actor>, I ..."
+
+| 
+
+
+
+|behavior
+|string
+
+|
+
+|Defines the objective of the user story in an implementation free manner (the intent), e.g. "want to <behavior> ..."
+
+| 
+
+
+
+|rationale
+|string
+
+|
+
+|Identifies why the actor desires the behavior (the benefit/value for the user), e.g. "so that I can <rationale>."
+
+| 
+
+
+
+|example
+|string
+
+|
+
+|One to two sentences describing an application of this user story
 
 | 
 
@@ -354,37 +387,11 @@ example: {{example}}
 
 .References
 
-* []
+* https://www.yodiz.com/blog/writing-user-stories-examples-and-templates-in-agile-methodologies/[Writing User Stories, Examples and Templates In Agile Methodologies]
 
+* https://www.atlassian.com/agile/project-management/user-stories[User Stories]
 
-
-
-=== {"[object Object]":null}
-*Purpose:* {"[object Object]":null}
-
-.{"[object Object]":null} Template
-----
-{{template}}
-
-----
-
-.{"[object Object]":null} Specification
-|===
-|Field |Type |Item Type |Description |Source
-
-
-|
-|
-
-|
-
-|
-
-| 
-
-
-
-|===
+* http://www.payton-consulting.com/write-user-story/[How to Write a User Story]
 
 
 
