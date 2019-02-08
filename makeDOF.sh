@@ -8,3 +8,4 @@ node scripts/buildUnifiedModel.js
 
 # generate each of the docs
 node scripts/generateDoc.js --unifiedModel=dist/architecture.yaml --template=README.adoc.liquid --out=README.adoc
+node scripts/generateDoc.js --unifiedModel=dist/architecture.yaml --template=DOF.adoc.liquid --out=dist/DOF.adoc

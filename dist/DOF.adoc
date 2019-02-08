@@ -32,48 +32,69 @@ The Distributed OSHW Framework will be a systematic approach identifying:
 
 Note how developing a methodology is different from identifying best practices, covering case studies, and creating definitions.  A methodology is something one follows; it is a fully defined process.  And by targeting tool independence, we can aim for developing a solution that will stand the test of time, just as version control methods have lasted through cvs, svn, and now git.
 
-== The Pillars of the DOF
+== Stakeholder Needs
+ 
+The development of the Distributed OSHW Framework (DOF) is guided by a series of stakeholder needs, listed below.
 
-The Distributed OSHW Framework (DOF) is built upon 4 pillars.  All design decisions for DOF are ultimately derived from one or more of these pillars.
 
-
-.1: OSHW Definition
+.Stakeholder Need 1: OSHW Definition
 ****
 OSHW projects should be developed and shared in accordance to the https://www.oshwa.org/definition/[OSHW Definition].
 **** 
 
-.2: OSHW Certification
+.Stakeholder Need 2: OSHW Certification
 ****
 OSHW projects should be developed and shared in accordance to the https://certification.oshwa.org/process.html[OSHW Certification process].
 **** 
 
-.3: OSHW should be like OSS
+.Stakeholder Need 3: OSHW should be like OSS
 ****
 Open Source Hardware should be like Open Source Software to the greatest degree possible (e.g. sharing, development, licensing).
 **** 
 
-.4: OSHW Source Definition
+.Stakeholder Need 4: OSHW Source Definition
 ****
 The source of an OSHW project is its:  *Bill of Materials Data* (list of components and counts covering all parts which must be purchased to build the project), *Assembly Instructions* (complete list of instructions to build the project from its purchased parts), and *Supporting Documentation* (e.g. design files, schematics, operating instructions)
 **** 
 
 
-== Methodology Documentation
+== User Stories
 
-The methodology is being modeled in a series of YAML files under the `architecture` folder.  A script is then used to generate this readme and the DOF architecture document (located in the `dist` folder).  See the `docs` folder for mataterial on the format of the architecture YAML files.
+DOF's stakeholder needs are then used to identify a series of user stories which then lead to design decisions captured in data structure and activity definitions.
 
-Please feel free to join the conversation by posting questions/comments as issues in the http://dof.sliderule.io[DOF repository].
 
-== Related Projects
+=== User Story 1: Branch OSHW
 
-.Mach 30 Related Projects
-* https://opendesignengine.net[Open Design Engine] - legacy OSHW project hosting portal built on https://www.redmine.org/[Redmine]
-* http://sliderule.io[Sliderule] - Reference implementation of DOF, being developed in stages
-** https://github.com/7BIndustries/sliderule-cli[Sliderule CLI] - Initial component of Sliderule, a command line interface implementation of DOF developed by https://github.com/7BIndustries/[7BIndustries]
+****
+As a *OSHW Developer* I want to *use branches in the development of OSHW* so that I can *modify the project source in parallel lines of development*.
+****
 
-.Sources of Inspiration
-* http://github.howstr.com/[Howstr] - A project by Matthew Maier to capture how to capture, share, and discover tangible projects
+*Example:* Creating a v1 branch to preserve and maintain v1 source as part of OSHW certification compliance.  New development can then happen on trunk or a v2 branch.
 
-== Further Reading
 
-* https://www.pearson.com/us/higher-education/product/Gibb-Building-Open-Source-Hardware-DIY-Manufacturing-for-Hackers-and-Makers/9780133373905.html[Building Open Source Hardware: DIY Manufacturing for Hackers and Makers] by Alicia Gibb
+=== User Story 2: Fork OSHW
+
+****
+As a *OSHW Developer* I want to *fork OSHW projects* so that I can *modify the project source in my own epository*.
+****
+
+*Example:* Forking a project to customize its design for my own purposes (e.g. swapping out a controller board, adjusting it to fit me).
+
+
+=== User Story 3: Merge OSHW
+
+****
+As a *OSHW Developer* I want to *merge project source* so that I can *integrate changes from a branch or fork into my current source*.
+****
+
+*Example:* Incorporating suggested source changes from a contributor who forked the project to develop a new feature for the project.
+
+
+=== User Story 4: Composition of OSHW
+
+****
+As a *OSHW Developer* I want to *include external projects as elements of my project* so that I can *build upon previous engineering effort (my own or others’)*.
+****
+
+*Example:* Using an Arduino Uno as the controller board for an OSHW robot project.
+

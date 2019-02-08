@@ -1,0 +1,59 @@
+= {{architecture.package.description}}
+{{architecture.package.author}}
+:revnumber: v{{architecture.package.version}}
+:revdate: {{architecture.generationDate}}
+
+// github specific things
+ifdef::env-github[]
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+:imagesdir: https://raw.githubusercontent.com/Mach30/dof/master/dist/images
+endif::[]
+
+// non-github specific things
+ifndef::env-github[]
+:imagesdir: ./dist/images
+endif::[]
+
+== Introduction
+
+Mach 30 launched https://opendesignengine.net[Open Design Engine] (ODE) in 2012. Since then we have run our own OSHW projects on ODE, observed other groups host OSHW projects on ODE and other sites, and held numerous conversations on and offline about the nature of hosting OSHW projects.  Our conclusion after all these years and experience is the same one we held back in 2012:  the OSHW community is still searching for a project hosting solution that meets the needs of hardware projects (where documentation is part of the source code).
+
+What has changed is our approach to addressing OSHW project hosting.  This time we are starting with the development of a tool independent methodology for developing and sharing OSHW, the Distributed OSHW Framework (DOF).  What do we mean by methodology?  
+
+The Distributed OSHW Framework will be a systematic approach identifying:
+
+* What needs to be shared
+* How it should be shared
+* The relationships between the various kinds of shared content
+
+Note how developing a methodology is different from identifying best practices, covering case studies, and creating definitions.  A methodology is something one follows; it is a fully defined process.  And by targeting tool independence, we can aim for developing a solution that will stand the test of time, just as version control methods have lasted through cvs, svn, and now git.
+
+== Stakeholder Needs
+ 
+The development of the Distributed OSHW Framework (DOF) is guided by a series of stakeholder needs, listed below.
+
+{% for need in architecture['1-StakeholderNeeds'] %}
+.Stakeholder Need {{need.id}}: {{need.name}}
+****
+{{need.statement}}
+**** 
+{% endfor %}
+
+== User Stories
+
+DOF's stakeholder needs are then used to identify a series of user stories which then lead to design decisions captured in data structure and activity definitions.
+
+{% for us in architecture['2-UserStories'] %}
+=== User Story {{us.id}}: {{us.name}}
+
+****
+As a *{{us.actor}}* I want to *{{us.behavior}}* so that I can *{{us.rationale}}*.
+****
+
+*Example:* {{us.example}}
+
+{% endfor %}
