@@ -1,6 +1,6 @@
 = YAML Architecture Modeling
 J. Simmons <jrs@mach30.org>
-:revnumber: v0.1.2
+:revnumber: v0.1.3
 :revdate: 2/7/2019
 
 // github specific things
@@ -297,7 +297,7 @@ derivedFrom: {{derivedFrom}}
 
 
 === User Story
-*Purpose:* TODO
+*Purpose:* Define unit of capability serving a specific user persona's need.
 
 .User Story Template
 ----

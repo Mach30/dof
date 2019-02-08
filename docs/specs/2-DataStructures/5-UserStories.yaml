@@ -1,5 +1,5 @@
 name: User Story
-purpose: TODO
+purpose: Define unit of capability serving a specific user persona's need.
 template: |
   id: {{id}}
   name: {{name}}
