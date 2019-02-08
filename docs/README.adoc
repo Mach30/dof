@@ -1,7 +1,7 @@
 = YAML Architecture Modeling
 J. Simmons <jrs@mach30.org>
 :revnumber: v0.1.1
-:revdate: 1/1/2019
+:revdate: 2/7/2019
 
 // github specific things
 ifdef::env-github[]
@@ -146,11 +146,11 @@ derivedFrom: {{derivedFrom}}
 
 
 |template
-|object
+|string
 
 |
 
-|Object representation of the Data Structure with content defined in Liquid templating language.
+|Liquid template of YAML representation of the data structure, suitable for use in manual or automated generation of the data structure
 
 | 
 
@@ -292,6 +292,99 @@ derivedFrom: {{derivedFrom}}
 .References
 
 * https://www.sebokwiki.org/wiki/Stakeholder_Needs_and_Requirements[Stakeholder Needs and Requirements]
+
+
+
+
+=== User Story
+*Purpose:* TODO
+
+.User Story Template
+----
+id: {{id}}
+name: {{name}}
+actor: {{actor}}
+behavior: {{behavior}}
+rationale: {{rationale}}
+derivedFrom: {{derivedFrom}}
+example: {{example}}
+
+----
+
+.User Story Specification
+|===
+|Field |Type |Item Type |Description |Source
+
+
+|id
+|integer
+
+|
+
+|Auto-increment identification number for the User Story
+
+| 
+
+
+
+|name
+|string
+
+|
+
+|Human readable (descriptive) name for the User Story
+
+| 
+
+
+
+|actor
+|string
+
+|
+
+|TODO
+
+| 
+
+
+
+|===
+
+
+.References
+
+* []
+
+
+
+
+=== {"[object Object]":null}
+*Purpose:* {"[object Object]":null}
+
+.{"[object Object]":null} Template
+----
+{{template}}
+
+----
+
+.{"[object Object]":null} Specification
+|===
+|Field |Type |Item Type |Description |Source
+
+
+|
+|
+
+|
+
+|
+
+| 
+
+
+
+|===
 
 
 

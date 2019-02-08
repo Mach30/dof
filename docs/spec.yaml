@@ -68,11 +68,11 @@ elements:
         description: Provides specification for an individual Data Structure
         derivedFrom: []
       - key: template
-        type: object
+        type: string
         itemType: ''
         description: >-
-          Object representation of the Data Structure with content defined in
-          Liquid templating language.
+          Liquid template of YAML representation of the data structure, suitable
+          for use in manual or automated generation of the data structure
         derivedFrom: []
       - key: elements
         type: list
@@ -142,6 +142,46 @@ elements:
         derivedFrom: []
     derivedFrom:
       - 1-References/1-StakeHolderNeedsAndRequirements.yaml
+  2-DataStructures/5-UserStories.yaml: &ref_5
+    name: User Story
+    purpose: TODO
+    template: |
+      id: {{id}}
+      name: {{name}}
+      actor: {{actor}}
+      behavior: {{behavior}}
+      rationale: {{rationale}}
+      derivedFrom: {{derivedFrom}}
+      example: {{example}}
+    elements:
+      - key: id
+        type: integer
+        itemType: ''
+        description: Auto-increment identification number for the User Story
+        derivedFrom: []
+      - key: name
+        type: string
+        itemType: ''
+        description: Human readable (descriptive) name for the User Story
+        derivedFrom: []
+      - key: actor
+        type: string
+        itemType: ''
+        description: TODO
+        derivedFrom: []
+    derivedFrom:
+      - TODO
+  2-DataStructures/test.out: &ref_6
+    name:
+      '[object Object]': null
+    purpose:
+      '[object Object]': null
+    template: |
+      {{template}}
+    elements:
+      - '[object Object]': null
+    derivedFrom:
+      '[object Object]': null
 package:
   name: yam
   version: 0.1.1
@@ -152,7 +192,7 @@ package:
   author: J. Simmons <jrs@mach30.org>
   license: CC-BY-4.0
   dependencies: {}
-generationDate: 1/1/2019
+generationDate: 2/7/2019
 1-References:
   - *ref_0
 2-DataStructures:
@@ -160,3 +200,5 @@ generationDate: 1/1/2019
   - *ref_2
   - *ref_3
   - *ref_4
+  - *ref_5
+  - *ref_6

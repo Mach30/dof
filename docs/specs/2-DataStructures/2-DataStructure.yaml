@@ -20,9 +20,9 @@ elements:
     description: Provides specification for an individual Data Structure
     derivedFrom: []
   - key: template
-    type: object
+    type: string
     itemType: ''
-    description: Object representation of the Data Structure with content defined in Liquid templating language. 
+    description: Liquid template of YAML representation of the data structure, suitable for use in manual or automated generation of the data structure 
     derivedFrom: []
   - key: elements
     type: list
