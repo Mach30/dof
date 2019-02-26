@@ -1,0 +1,54 @@
+name: Component
+purpose: Represents the smallest logical element in an OSHW project.  A Component may be a project in its own right (with a sub-component hierarchy) or may be nested as a sub-component in the "source" of another component.
+template: |
+  name: {{name}}
+  version: {{version}}
+  description: {{description}}
+  license: {{license}}
+  author: {{author}}
+  dependencies: {{dependencies}}
+  components: {{components}}
+elements:
+  - key: name
+    type: string
+    itemType: ''
+    description: Source representation of the component's name.  Format = single word, only lowercase letters, and may contain hyphens and underscores.
+    derivedFrom:
+    - 0-References/1-CreatingA_PackageJsonFile.yaml
+  - key: version
+    type: string
+    itemType: ''
+    description: Version number of the component's source.  Format = x.x.x per semantic versioning guidelines.
+    derivedFrom:
+    - 0-References/1-CreatingA_PackageJsonFile.yaml
+    - 0-References/2-AboutSemanticVersioning.yaml
+  - key: description
+    type: string
+    itemType: ''
+    description: Human readable representation of the component's name.  Typically used in rendered documentation referencing the component.
+    derivedFrom:
+    - 0-References/1-CreatingA_PackageJsonFile.yaml
+  - key: license
+    type: string
+    itemType: ''
+    description: List of licenses used within the component's source.  Format = SPDX license expression.
+    derivedFrom:
+    - 0-References/3-UsingSpdxLicenseListShortIdentifiers.yaml
+  - key: author
+    type: string
+    itemType: ''
+    description: Identifies author (e.g. owner of source intellectual property).  Format (email and website are optional)= Author Name <email address> (website URL) 
+    derivedFrom:
+    - 0-References/1-CreatingA_PackageJsonFile.yaml
+  - key: dependencies
+    type: dictionary
+    itemType: string
+    description: Per NPM/Yarn.  Key = dependency name.  Value = Semantic versioning version string.
+    derivedFrom:
+    - 0-References/1-CreatingA_PackageJsonFile.yaml
+  - key: components
+    type: dictionary
+    itemType: 3-DataStructures/1-Component.yaml
+    description: Listing of sub-components directly owned by this component.  Key = sub-component's name.  Value = sub-component's data structure.
+    derivedFrom: []
+derivedFrom: []

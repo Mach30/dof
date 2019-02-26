@@ -57,3 +57,48 @@ As a *{{us.actor}}* I want to *{{us.behavior}}* so that I can *{{us.rationale}}*
 *Example:* {{us.example}}
 
 {% endfor %}
+
+== Data Structures
+This section covers each data structure type in the *{{architecture.package.description}}*.
+
+{% for ds in architecture['3-DataStructures'] %}
+=== {{ds.name}}
+*Purpose:* {{ds.purpose}}
+
+.{{ds.name}} Template
+----
+{{ds.template}}
+----
+
+.{{ds.name}} Specification
+|===
+|Field |Type |Item Type |Description |Source
+
+{% for field in ds['elements'] %}
+|{{field.key}}
+|{{field.type}}
+{% if architecture['elements'][field.itemType].name %}
+|{{architecture['elements'][field.itemType].name}}
+{% else %}
+|{{field.itemType}}
+{% endif %}
+|{{field.description}}
+{% if field.derivedFrom.length > 0 %}
+a|{% for reference in field.derivedFrom %}
+* {{architecture['elements'][reference].url}}[{{architecture['elements'][reference].title}}]
+{% endfor %}
+{% else %}
+| 
+{% endif %}
+
+{% endfor %}
+|===
+
+{% if ds['derivedFrom'].length > 0 %}
+.References
+{% for reference in ds['derivedFrom'] %}
+* {{architecture['elements'][reference].url}}[{{architecture['elements'][reference].title}}]
+{% endfor %}
+{% endif %}
+
+{% endfor %}

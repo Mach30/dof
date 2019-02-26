@@ -1,7 +1,7 @@
 = Distributed OSHW Framework (DOF)
 J. Simmons <jrs@mach30.org>
-:revnumber: v0.1.3
-:revdate: 2/7/2019
+:revnumber: v0.1.4
+:revdate: 2/25/2019
 
 // github specific things
 ifdef::env-github[]
@@ -97,4 +97,125 @@ As a *OSHW Developer* I want to *include external projects as elements of my pro
 ****
 
 *Example:* Using an Arduino Uno as the controller board for an OSHW robot project.
+
+
+
+== Data Structures
+This section covers each data structure type in the *Distributed OSHW Framework (DOF)*.
+
+
+=== Component
+*Purpose:* Represents the smallest logical element in an OSHW project.  A Component may be a project in its own right (with a sub-component hierarchy) or may be nested as a sub-component in the "source" of another component.
+
+.Component Template
+----
+name: {{name}}
+version: {{version}}
+description: {{description}}
+license: {{license}}
+author: {{author}}
+dependencies: {{dependencies}}
+components: {{components}}
+
+----
+
+.Component Specification
+|===
+|Field |Type |Item Type |Description |Source
+
+
+|name
+|string
+
+|
+
+|Source representation of the component's name.  Format = single word, only lowercase letters, and may contain hyphens and underscores.
+
+a|
+* https://docs.npmjs.com/creating-a-package-json-file[Creating a package.json file]
+
+
+
+
+|version
+|string
+
+|
+
+|Version number of the component's source.  Format = x.x.x per semantic versioning guidelines.
+
+a|
+* https://docs.npmjs.com/creating-a-package-json-file[Creating a package.json file]
+
+* https://docs.npmjs.com/about-semantic-versioning[About semantic versioning]
+
+
+
+
+|description
+|string
+
+|
+
+|Human readable representation of the component's name.  Typically used in rendered documentation referencing the component.
+
+a|
+* https://docs.npmjs.com/creating-a-package-json-file[Creating a package.json file]
+
+
+
+
+|license
+|string
+
+|
+
+|List of licenses used within the component's source.  Format = SPDX license expression.
+
+a|
+* https://spdx.org/sites/cpstandard/files/pages/files/using_spdx_license_list_short_identifiers.pdf[Using SPDX License List "short identifiers” in source files]
+
+
+
+
+|author
+|string
+
+|
+
+|Identifies author (e.g. owner of source intellectual property).  Format (email and website are optional)= Author Name <email address> (website URL)
+
+a|
+* https://docs.npmjs.com/creating-a-package-json-file[Creating a package.json file]
+
+
+
+
+|dependencies
+|dictionary
+
+|string
+
+|Per NPM/Yarn.  Key = dependency name.  Value = Semantic versioning version string.
+
+a|
+* https://docs.npmjs.com/creating-a-package-json-file[Creating a package.json file]
+
+
+
+
+|components
+|dictionary
+
+|Component
+
+|Listing of sub-components directly owned by this component.  Key = sub-component's name.  Value = sub-component's data structure.
+
+| 
+
+
+
+|===
+
+
 
