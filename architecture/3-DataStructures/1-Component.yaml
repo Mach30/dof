@@ -8,6 +8,9 @@ template: |
   author: {{author}}
   dependencies: {{dependencies}}
   components: {{components}}
+  parts: {{parts}}
+  tools: {{tools}}
+  precautions: {{precautions}}
 elements:
   - key: name
     type: string
@@ -50,5 +53,20 @@ elements:
     type: dictionary
     itemType: 3-DataStructures/1-Component.yaml
     description: Listing of sub-components directly owned by this component.  Key = sub-component's name.  Value = sub-component's data structure.
+    derivedFrom: []
+  - key: parts
+    type: dictionary
+    itemType: 3-DataStructures/2-ComponentListItem.yaml
+    description: Listing of the component's parts (and substitutions) defined as sub-components.  Key = part's id.  Value = part's key data.
+    derivedFrom: []
+  - key: tools
+    type: dictionary
+    itemType: 3-DataStructures/2-ComponentListItem.yaml
+    description: Listing of the required tools (and substitutions) defined as sub-components.  Key = tool's id.  Value = tool's key data.
+    derivedFrom: []
+  - key: precautions
+    type: list
+    itemType: string
+    description: Listing of caution statements (e.g. safety warnings) for the component.
     derivedFrom: []
 derivedFrom: []

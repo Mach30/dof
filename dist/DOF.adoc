@@ -1,7 +1,7 @@
 = Distributed OSHW Framework (DOF)
 J. Simmons <jrs@mach30.org>
-:revnumber: v0.1.4
-:revdate: 2/25/2019
+:revnumber: v0.1.5
+:revdate: 2/26/2019
 
 // github specific things
 ifdef::env-github[]
@@ -116,6 +116,9 @@ license: {{license}}
 author: {{author}}
 dependencies: {{dependencies}}
 components: {{components}}
+parts: {{parts}}
+tools: {{tools}}
+precautions: {{precautions}}
 
 ----
 
@@ -210,6 +213,165 @@ a|
 |Component
 
 |Listing of sub-components directly owned by this component.  Key = sub-component's name.  Value = sub-component's data structure.
+
+| 
+
+
+
+|parts
+|dictionary
+
+|Component List Item
+
+|Listing of the component's parts (and substitutions) defined as sub-components.  Key = part's id.  Value = part's key data.
+
+| 
+
+
+
+|tools
+|dictionary
+
+|Component List Item
+
+|Listing of the required tools (and substitutions) defined as sub-components.  Key = tool's id.  Value = tool's key data.
+
+| 
+
+
+
+|precautions
+|list
+
+|string
+
+|Listing of caution statements (e.g. safety warnings) for the component.
+
+| 
+
+
+
+|===
+
+
+
+
+=== Component List Item
+*Purpose:* Identifies a part or tool used in the fabrication of the component.  Parts and tools are defined by their source material in the components list.
+
+.Component List Item Template
+----
+id: {{id}}
+description: {{description}}
+descriptionLong: {{descriptionLong}}
+descriptionSelected: {{descriptionSelected}}
+quantity: {{quantity}}
+quantityUnits: {{quantityUnits}}
+options: {{options}}
+selectedOption: {{selectedOption}}
+notes: {{notes}}
+
+----
+
+.Component List Item Specification
+|===
+|Field |Type |Item Type |Description |Source
+
+
+|id
+|string
+
+|
+
+|Part's ID (or part number).  Format = single word, only lowercase letters, and may contain hyphens and underscores.
+
+| 
+
+
+
+|description
+|string
+
+|
+
+|Human readable name for the part (not name of the selected component for this part).
+
+| 
+
+
+
+|descriptionLong
+|string
+
+|
+
+|Computed value = "{{id}}:\ {{description}}".  Used as shortcut in documentation.
+
+| 
+
+
+
+|descriptionSelected
+|string
+
+|
+
+|Computed value = "{{id}}:\ {{description}} ({{selectedOption.description}} v{{selectedOption.version}})"
+
+| 
+
+
+
+|quantity
+|number
+
+|
+
+|Defines how much of the item is required (whole number or real number depending on item)
+
+| 
+
+
+
+|quantityUnits
+|string
+
+|
+
+|Unit of measure for the specified quantity.  When specifiying units for whole components use "part".
+
+| 
+
+
+
+|options
+|list
+
+|string
+
+|List of component names defining available substitutions for the part or tool.
+
+| 
+
+
+
+|selectedOption
+|integer
+
+|
+
+|Specifies the selected option from the list of component options.
+
+| 
+
+
+
+|notes
+|string
+
+|
+
+|Developer comments on this part or tool.
 
 | 
 

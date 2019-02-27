@@ -1,0 +1,59 @@
+name: Component List Item
+purpose: Identifies a part or tool used in the fabrication of the component.  Parts and tools are defined by their source material in the components list.
+template: |
+  id: {{id}}
+  description: {{description}}
+  descriptionLong: {{descriptionLong}}
+  descriptionSelected: {{descriptionSelected}}
+  quantity: {{quantity}}
+  quantityUnits: {{quantityUnits}}
+  options: {{options}}
+  selectedOption: {{selectedOption}}
+  notes: {{notes}}
+elements:
+  - key: id
+    type: string
+    itemType: ''
+    description: Part's ID (or part number).  Format = single word, only lowercase letters, and may contain hyphens and underscores.
+    derivedFrom: []
+  - key: description
+    type: string
+    itemType: ''
+    description: Human readable name for the part (not name of the selected component for this part).
+    derivedFrom: []
+  - key: descriptionLong
+    type: string
+    itemType: ''
+    description: Computed value = "{{id}}:\ {{description}}".  Used as shortcut in documentation.
+    derivedFrom: []
+  - key: descriptionSelected
+    type: string
+    itemType: ''
+    description: Computed value = "{{id}}:\ {{description}} ({{selectedOption.description}} v{{selectedOption.version}})"
+    derivedFrom: []
+  - key: quantity
+    type: number
+    itemType: ''
+    description: Defines how much of the item is required (whole number or real number depending on item)
+    derivedFrom: []
+  - key: quantityUnits
+    type: string
+    itemType: ''
+    description: Unit of measure for the specified quantity.  When specifiying units for whole components use "part".
+    derivedFrom: []
+  - key: options
+    type: list
+    itemType: string
+    description: List of component names defining available substitutions for the part or tool.
+    derivedFrom: []
+  - key: selectedOption
+    type: integer
+    itemType: ''
+    description: Specifies the selected option from the list of component options.
+    derivedFrom: []
+  - key: notes
+    type: string
+    itemType: ''
+    description: Developer comments on this part or tool.
+    derivedFrom: []
+derivedFrom: []

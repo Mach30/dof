@@ -101,6 +101,9 @@ elements:
       author: {{author}}
       dependencies: {{dependencies}}
       components: {{components}}
+      parts: {{parts}}
+      tools: {{tools}}
+      precautions: {{precautions}}
     elements:
       - key: name
         type: string
@@ -159,10 +162,107 @@ elements:
           Listing of sub-components directly owned by this component.  Key =
           sub-component's name.  Value = sub-component's data structure.
         derivedFrom: []
+      - key: parts
+        type: dictionary
+        itemType: 3-DataStructures/2-ComponentListItem.yaml
+        description: >-
+          Listing of the component's parts (and substitutions) defined as
+          sub-components.  Key = part's id.  Value = part's key data.
+        derivedFrom: []
+      - key: tools
+        type: dictionary
+        itemType: 3-DataStructures/2-ComponentListItem.yaml
+        description: >-
+          Listing of the required tools (and substitutions) defined as
+          sub-components.  Key = tool's id.  Value = tool's key data.
+        derivedFrom: []
+      - key: precautions
+        type: list
+        itemType: string
+        description: >-
+          Listing of caution statements (e.g. safety warnings) for the
+          component.
+        derivedFrom: []
+    derivedFrom: []
+  3-DataStructures/2-ComponentListItem.yaml: &ref_12
+    name: Component List Item
+    purpose: >-
+      Identifies a part or tool used in the fabrication of the component.  Parts
+      and tools are defined by their source material in the components list.
+    template: |
+      id: {{id}}
+      description: {{description}}
+      descriptionLong: {{descriptionLong}}
+      descriptionSelected: {{descriptionSelected}}
+      quantity: {{quantity}}
+      quantityUnits: {{quantityUnits}}
+      options: {{options}}
+      selectedOption: {{selectedOption}}
+      notes: {{notes}}
+    elements:
+      - key: id
+        type: string
+        itemType: ''
+        description: >-
+          Part's ID (or part number).  Format = single word, only lowercase
+          letters, and may contain hyphens and underscores.
+        derivedFrom: []
+      - key: description
+        type: string
+        itemType: ''
+        description: >-
+          Human readable name for the part (not name of the selected component
+          for this part).
+        derivedFrom: []
+      - key: descriptionLong
+        type: string
+        itemType: ''
+        description: >-
+          Computed value = "{{id}}:\ {{description}}".  Used as shortcut in
+          documentation.
+        derivedFrom: []
+      - key: descriptionSelected
+        type: string
+        itemType: ''
+        description: >-
+          Computed value = "{{id}}:\ {{description}}
+          ({{selectedOption.description}} v{{selectedOption.version}})"
+        derivedFrom: []
+      - key: quantity
+        type: number
+        itemType: ''
+        description: >-
+          Defines how much of the item is required (whole number or real number
+          depending on item)
+        derivedFrom: []
+      - key: quantityUnits
+        type: string
+        itemType: ''
+        description: >-
+          Unit of measure for the specified quantity.  When specifiying units
+          for whole components use "part".
+        derivedFrom: []
+      - key: options
+        type: list
+        itemType: string
+        description: >-
+          List of component names defining available substitutions for the part
+          or tool.
+        derivedFrom: []
+      - key: selectedOption
+        type: integer
+        itemType: ''
+        description: Specifies the selected option from the list of component options.
+        derivedFrom: []
+      - key: notes
+        type: string
+        itemType: ''
+        description: Developer comments on this part or tool.
+        derivedFrom: []
     derivedFrom: []
 package:
   name: dof
-  version: 0.1.4
+  version: 0.1.5
   description: Distributed OSHW Framework (DOF)
   keywords:
     - oshw
@@ -174,7 +274,7 @@ package:
     js-yaml: ^3.12.0
     liquidjs: ^6.1.1
     minimist: ^1.2.0
-generationDate: 2/25/2019
+generationDate: 2/26/2019
 0-References:
   - *ref_0
   - *ref_1
@@ -191,3 +291,4 @@ generationDate: 2/25/2019
   - *ref_10
 3-DataStructures:
   - *ref_11
+  - *ref_12
