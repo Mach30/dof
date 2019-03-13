@@ -11,6 +11,7 @@ template: |
   parts: {{parts}}
   tools: {{tools}}
   precautions: {{precautions}}
+  assemblySteps: {{assemblySteps}}
 elements:
   - key: name
     type: string
@@ -68,5 +69,10 @@ elements:
     type: list
     itemType: string
     description: Listing of caution statements (e.g. safety warnings) for the component.
+    derivedFrom: []
+  - key: assemblySteps
+    type: list
+    itemType: 3-DataStructures/3-ActivityStep.yaml
+    description: Sequence of steps required to assemble the component.
     derivedFrom: []
 derivedFrom: []

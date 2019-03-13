@@ -104,6 +104,7 @@ elements:
       parts: {{parts}}
       tools: {{tools}}
       precautions: {{precautions}}
+      assemblySteps: {{assemblySteps}}
     elements:
       - key: name
         type: string
@@ -183,6 +184,11 @@ elements:
           Listing of caution statements (e.g. safety warnings) for the
           component.
         derivedFrom: []
+      - key: assemblySteps
+        type: list
+        itemType: 3-DataStructures/3-ActivityStep.yaml
+        description: Sequence of steps required to assemble the component.
+        derivedFrom: []
     derivedFrom: []
   3-DataStructures/2-ComponentListItem.yaml: &ref_12
     name: Component List Item
@@ -260,9 +266,44 @@ elements:
         description: Developer comments on this part or tool.
         derivedFrom: []
     derivedFrom: []
+  3-DataStructures/3-ActivityStep.yaml: &ref_13
+    name: Activity Step
+    purpose: 'Defines a single step in an activity, e.g. assembly instructions.'
+    template: |
+      summary: {{summary}}
+      requiredParts: {{requiredParts}}
+      requiredTools: {{requiredTools}}
+      details: |
+        {{details}}
+    elements:
+      - key: summary
+        type: string
+        itemType: ''
+        description: >-
+          Brief overview of the step (optional if step includes details).  Can
+          be used as a heading in documentation rendered from the step.
+        derivedFrom: []
+      - key: requiredParts
+        type: list
+        itemType: string
+        description: Optional list of part IDs needed to complete this step.
+        derivedFrom: []
+      - key: requiredTools
+        type: list
+        itemType: string
+        description: Optional list of tool IDs needed to complete this step.
+        derivedFrom: []
+      - key: details
+        type: string
+        itemType: ''
+        description: >-
+          Multiline formatted text string defining the details of the step
+          (optional if step includes summary).  Format is up to user (e.g. list,
+          ordered list, narrative text, some combination).
+    derivedFrom: []
 package:
   name: dof
-  version: 0.1.5
+  version: 0.1.6
   description: Distributed OSHW Framework (DOF)
   keywords:
     - oshw
@@ -274,7 +315,7 @@ package:
     js-yaml: ^3.12.0
     liquidjs: ^6.1.1
     minimist: ^1.2.0
-generationDate: 2/26/2019
+generationDate: 3/12/2019
 0-References:
   - *ref_0
   - *ref_1
@@ -292,3 +333,4 @@ generationDate: 2/26/2019
 3-DataStructures:
   - *ref_11
   - *ref_12
+  - *ref_13

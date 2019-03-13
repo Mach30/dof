@@ -1,7 +1,7 @@
 = Distributed OSHW Framework (DOF)
 J. Simmons <jrs@mach30.org>
-:revnumber: v0.1.5
-:revdate: 2/26/2019
+:revnumber: v0.1.6
+:revdate: 3/12/2019
 
 // github specific things
 ifdef::env-github[]
@@ -119,6 +119,7 @@ components: {{components}}
 parts: {{parts}}
 tools: {{tools}}
 precautions: {{precautions}}
+assemblySteps: {{assemblySteps}}
 
 ----
 
@@ -251,6 +252,17 @@ a|
 
 
 
+|assemblySteps
+|list
+
+|Activity Step
+
+|Sequence of steps required to assemble the component.
+
+| 
+
+
+
 |===
 
 
@@ -372,6 +384,73 @@ notes: {{notes}}
 |
 
 |Developer comments on this part or tool.
+
+| 
+
+
+
+|===
+
+
+
+
+=== Activity Step
+*Purpose:* Defines a single step in an activity, e.g. assembly instructions.
+
+.Activity Step Template
+----
+summary: {{summary}}
+requiredParts: {{requiredParts}}
+requiredTools: {{requiredTools}}
+details: |
+  {{details}}
+
+----
+
+.Activity Step Specification
+|===
+|Field |Type |Item Type |Description |Source
+
+
+|summary
+|string
+
+|
+
+|Brief overview of the step (optional if step includes details).  Can be used as a heading in documentation rendered from the step.
+
+| 
+
+
+
+|requiredParts
+|list
+
+|string
+
+|Optional list of part IDs needed to complete this step.
+
+| 
+
+
+
+|requiredTools
+|list
+
+|string
+
+|Optional list of tool IDs needed to complete this step.
+
+| 
+
+
+
+|details
+|string
+
+|
+
+|Multiline formatted text string defining the details of the step (optional if step includes summary).  Format is up to user (e.g. list, ordered list, narrative text, some combination).
 
 | 
 

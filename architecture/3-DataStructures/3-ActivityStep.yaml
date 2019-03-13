@@ -1,0 +1,29 @@
+name: Activity Step
+purpose: Defines a single step in an activity, e.g. assembly instructions.
+template: |
+  summary: {{summary}}
+  requiredParts: {{requiredParts}}
+  requiredTools: {{requiredTools}}
+  details: |
+    {{details}}
+elements:
+  - key: summary
+    type: string
+    itemType: ''
+    description: Brief overview of the step (optional if step includes details).  Can be used as a heading in documentation rendered from the step.
+    derivedFrom: []
+  - key: requiredParts
+    type: list
+    itemType: string
+    description: Optional list of part IDs needed to complete this step.
+    derivedFrom: []
+  - key: requiredTools
+    type: list
+    itemType: string
+    description: Optional list of tool IDs needed to complete this step.
+    derivedFrom: []
+  - key: details
+    type: string
+    itemType: ''
+    description: Multiline formatted text string defining the details of the step (optional if step includes summary).  Format is up to user (e.g. list, ordered list, narrative text, some combination).
+derivedFrom: []
