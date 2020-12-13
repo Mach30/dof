@@ -1,1 +1,7 @@
 node_modules/
+
+# build script generated files
+public/
+
+# github action keys
+gh-pages*
