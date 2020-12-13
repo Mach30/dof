@@ -479,14 +479,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_the_pillars_of_the_dof">The Pillars of the DOF</h2>
+<h2 id="_stakeholder_needs">Stakeholder Needs</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The Distributed OSHW Framework (DOF) is built upon 4 pillars.  All design decisions for DOF are ultimately derived from one or more of these pillars.</p>
+<p>The development of the Distributed OSHW Framework (DOF) is guided by a series of stakeholder needs, listed below.</p>
 </div>
 <div class="sidebarblock">
 <div class="content">
-<div class="title">1: OSHW Definition</div>
+<div class="title">Stakeholder Need 1: OSHW Definition</div>
 <div class="paragraph">
 <p>OSHW projects should be developed and shared in accordance to the <a href="https://www.oshwa.org/definition/">OSHW Definition</a>.</p>
 </div>
@@ -494,7 +494,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="sidebarblock">
 <div class="content">
-<div class="title">2: OSHW Certification</div>
+<div class="title">Stakeholder Need 2: OSHW Certification</div>
 <div class="paragraph">
 <p>OSHW projects should be developed and shared in accordance to the <a href="https://certification.oshwa.org/process.html">OSHW Certification process</a>.</p>
 </div>
@@ -502,7 +502,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="sidebarblock">
 <div class="content">
-<div class="title">3: OSHW should be like OSS</div>
+<div class="title">Stakeholder Need 3: OSHW should be like OSS</div>
 <div class="paragraph">
 <p>Open Source Hardware should be like Open Source Software to the greatest degree possible (e.g. sharing, development, licensing).</p>
 </div>
@@ -510,7 +510,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="sidebarblock">
 <div class="content">
-<div class="title">4: OSHW Source Definition</div>
+<div class="title">Stakeholder Need 4: OSHW Source Definition</div>
 <div class="paragraph">
 <p>The source of an OSHW project is its:  <strong>Bill of Materials Data</strong> (list of components and counts covering all parts which must be purchased to build the project), <strong>Assembly Instructions</strong> (complete list of instructions to build the project from its purchased parts), and <strong>Supporting Documentation</strong> (e.g. design files, schematics, operating instructions)</p>
 </div>
@@ -519,56 +519,398 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_methodology_documentation">Methodology Documentation</h2>
+<h2 id="_user_stories">User Stories</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The methodology is being modeled in a series of YAML files under the <code>architecture</code> folder.  A script is then used to generate this readme and the DOF architecture document (located in the <code>dist</code> folder).  See the <code>docs</code> folder for mataterial on the format of the architecture YAML files.</p>
+<p>DOF&#8217;s stakeholder needs are then used to identify a series of user stories which then lead to design decisions captured in data structure and activity definitions.</p>
+</div>
+<div class="sect2">
+<h3 id="_user_story_1_branch_oshw">User Story 1: Branch OSHW</h3>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>As a <strong>OSHW Developer</strong> I want to <strong>use branches in the development of OSHW</strong> so that I can <strong>modify the project source in parallel lines of development</strong>.</p>
+</div>
+</div>
 </div>
 <div class="paragraph">
-<p>Please feel free to join the conversation by posting questions/comments as issues in the <a href="http://dof.sliderule.io">DOF repository</a>.</p>
+<p><strong>Example:</strong> Creating a v1 branch to preserve and maintain v1 source as part of OSHW certification compliance.  New development can then happen on trunk or a v2 branch.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_user_story_2_fork_oshw">User Story 2: Fork OSHW</h3>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>As a <strong>OSHW Developer</strong> I want to <strong>fork OSHW projects</strong> so that I can <strong>modify the project source in my own epository</strong>.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong> Forking a project to customize its design for my own purposes (e.g. swapping out a controller board, adjusting it to fit me).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_user_story_3_merge_oshw">User Story 3: Merge OSHW</h3>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>As a <strong>OSHW Developer</strong> I want to <strong>merge project source</strong> so that I can <strong>integrate changes from a branch or fork into my current source</strong>.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong> Incorporating suggested source changes from a contributor who forked the project to develop a new feature for the project.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_user_story_4_composition_of_oshw">User Story 4: Composition of OSHW</h3>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>As a <strong>OSHW Developer</strong> I want to <strong>include external projects as elements of my project</strong> so that I can <strong>build upon previous engineering effort (my own or others’)</strong>.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong> Using an Arduino Uno as the controller board for an OSHW robot project.</p>
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_related_projects">Related Projects</h2>
+<h2 id="_data_structures">Data Structures</h2>
 <div class="sectionbody">
-<div class="ulist">
-<div class="title">Mach 30 Related Projects</div>
+<div class="paragraph">
+<p>This section covers each data structure type in the <strong>Distributed OSHW Framework (DOF)</strong>.</p>
+</div>
+<div class="sect2">
+<h3 id="_component">Component</h3>
+<div class="paragraph">
+<p><strong>Purpose:</strong> Represents the smallest logical element in an OSHW project.  A Component may be a project in its own right (with a sub-component hierarchy) or may be nested as a sub-component in the "source" of another component.</p>
+</div>
+<div class="listingblock">
+<div class="title">Component Template</div>
+<div class="content">
+<pre>name: {{name}}
+version: {{version}}
+description: {{description}}
+license: {{license}}
+author: {{author}}
+dependencies: {{dependencies}}
+components: {{components}}
+parts: {{parts}}
+tools: {{tools}}
+precautions: {{precautions}}
+assemblySteps: {{assemblySteps}}</pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Component Specification</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Item Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Source representation of the component&#8217;s name.  Format = single word, only lowercase letters, and may contain hyphens and underscores.</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><a href="https://opendesignengine.net">Open Design Engine</a> - legacy OSHW project hosting portal built on <a href="https://www.redmine.org/">Redmine</a></p>
+<p><a href="https://docs.npmjs.com/creating-a-package-json-file">Creating a package.json file</a></p>
 </li>
-<li>
-<p><a href="http://sliderule.io">Sliderule</a> - Reference implementation of DOF, being developed in stages</p>
-<div class="ulist">
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">version</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Version number of the component&#8217;s source.  Format = x.x.x per semantic versioning guidelines.</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><a href="https://github.com/7BIndustries/sliderule-cli">Sliderule CLI</a> - Initial component of Sliderule, a command line interface implementation of DOF developed by <a href="https://github.com/7BIndustries/">7BIndustries</a></p>
+<p><a href="https://docs.npmjs.com/creating-a-package-json-file">Creating a package.json file</a></p>
+</li>
+<li>
+<p><a href="https://docs.npmjs.com/about-semantic-versioning">About semantic versioning</a></p>
 </li>
 </ul>
-</div>
-</li>
-</ul>
-</div>
-<div class="ulist">
-<div class="title">Sources of Inspiration</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Human readable representation of the component&#8217;s name.  Typically used in rendered documentation referencing the component.</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><a href="http://github.howstr.com/">Howstr</a> - A project by Matthew Maier to capture how to capture, share, and discover tangible projects</p>
+<p><a href="https://docs.npmjs.com/creating-a-package-json-file">Creating a package.json file</a></p>
 </li>
 </ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_further_reading">Further Reading</h2>
-<div class="sectionbody">
-<div class="ulist">
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">license</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List of licenses used within the component&#8217;s source.  Format = SPDX license expression.</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><a href="https://www.pearson.com/us/higher-education/product/Gibb-Building-Open-Source-Hardware-DIY-Manufacturing-for-Hackers-and-Makers/9780133373905.html">Building Open Source Hardware: DIY Manufacturing for Hackers and Makers</a> by Alicia Gibb</p>
+<p><a href="https://spdx.org/sites/cpstandard/files/pages/files/using_spdx_license_list_short_identifiers.pdf">Using SPDX License List "short identifiers” in source files</a></p>
 </li>
 </ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">author</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Identifies author (e.g. owner of source intellectual property).  Format (email and website are optional)= Author Name &lt;email address&gt; (website URL)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://docs.npmjs.com/creating-a-package-json-file">Creating a package.json file</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dependencies</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dictionary</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Per NPM/Yarn.  Key = dependency name.  Value = Semantic versioning version string.</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://docs.npmjs.com/creating-a-package-json-file">Creating a package.json file</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">components</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dictionary</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Component</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Listing of sub-components directly owned by this component.  Key = sub-component&#8217;s name.  Value = sub-component&#8217;s data structure.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">parts</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dictionary</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Component List Item</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Listing of the component&#8217;s parts (and substitutions) defined as sub-components.  Key = part&#8217;s id.  Value = part&#8217;s key data.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tools</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dictionary</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Component List Item</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Listing of the required tools (and substitutions) defined as sub-components.  Key = tool&#8217;s id.  Value = tool&#8217;s key data.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">precautions</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">list</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Listing of caution statements (e.g. safety warnings) for the component.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">assemblySteps</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">list</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Activity Step</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sequence of steps required to assemble the component.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_component_list_item">Component List Item</h3>
+<div class="paragraph">
+<p><strong>Purpose:</strong> Identifies a part or tool used in the fabrication of the component.  Parts and tools are defined by their source material in the components list.</p>
+</div>
+<div class="listingblock">
+<div class="title">Component List Item Template</div>
+<div class="content">
+<pre>id: {{id}}
+description: {{description}}
+descriptionLong: {{descriptionLong}}
+descriptionSelected: {{descriptionSelected}}
+quantity: {{quantity}}
+quantityUnits: {{quantityUnits}}
+options: {{options}}
+selectedOption: {{selectedOption}}
+notes: {{notes}}</pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. Component List Item Specification</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Item Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Part&#8217;s ID (or part number).  Format = single word, only lowercase letters, and may contain hyphens and underscores.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Human readable name for the part (not name of the selected component for this part).</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">descriptionLong</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Computed value = "{{id}}:\ {{description}}".  Used as shortcut in documentation.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">descriptionSelected</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Computed value = "{{id}}:\ {{description}} ({{selectedOption.description}} v{{selectedOption.version}})"</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">quantity</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">number</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Defines how much of the item is required (whole number or real number depending on item)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">quantityUnits</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unit of measure for the specified quantity.  When specifiying units for whole components use "part".</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">options</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">list</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List of component names defining available substitutions for the part or tool.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">selectedOption</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specifies the selected option from the list of component options.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">notes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Developer comments on this part or tool.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_activity_step">Activity Step</h3>
+<div class="paragraph">
+<p><strong>Purpose:</strong> Defines a single step in an activity, e.g. assembly instructions.</p>
+</div>
+<div class="listingblock">
+<div class="title">Activity Step Template</div>
+<div class="content">
+<pre>summary: {{summary}}
+requiredParts: {{requiredParts}}
+requiredTools: {{requiredTools}}
+details: |
+  {{details}}</pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 3. Activity Step Specification</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Item Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">summary</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Brief overview of the step (optional if step includes details).  Can be used as a heading in documentation rendered from the step.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">requiredParts</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">list</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional list of part IDs needed to complete this step.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">requiredTools</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">list</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional list of tool IDs needed to complete this step.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">details</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Multiline formatted text string defining the details of the step (optional if step includes summary).  Format is up to user (e.g. list, ordered list, narrative text, some combination).</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
@@ -576,7 +918,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="footer">
 <div id="footer-text">
 Version v0.1.6<br>
-Last updated 2020-12-13 23:09:54 UTC
+Last updated 2020-12-13 23:58:38 UTC
 </div>
 </div>
 </body>
