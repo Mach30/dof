@@ -3,6 +3,8 @@ J. Simmons <jrs@mach30.org>
 :revnumber: v0.1.6
 :revdate: 3/12/2019
 
+:toc: left
+
 // github specific things
 ifdef::env-github[]
 :tip-caption: :bulb:
