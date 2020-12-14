@@ -18,7 +18,7 @@ ifndef::env-github[]
 :imagesdir: ./dist/images
 endif::[]
 
-include::../README.adoc
+include::../README.adoc[]
 
 == Stakeholder Needs
  
