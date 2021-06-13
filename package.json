@@ -9,9 +9,5 @@
     "homepage": "http://dof.sliderule.io",
     "author": "J. Simmons <jrs@mach30.org>",
     "license": "CC-BY-4.0",
-    "dependencies": {
-        "js-yaml": "^3.12.0",
-        "liquidjs": "^6.1.1",
-        "minimist": "^1.2.0"
-    }
+    "dependencies": {}
 }
