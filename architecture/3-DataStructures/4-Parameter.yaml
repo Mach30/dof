@@ -1,0 +1,41 @@
+name: Parameter
+purpose: Defines a data structure for an input or output of a component function.
+template: |
+  name: {{name}}
+  description: {{description}}
+  type: {{type}}
+  units: {{units}}
+  defaultValue: {{defaultValue}}
+  constraints: {{constraints}}
+elements:
+  - key: name
+    type: string
+    itemType: ''
+    description: Source representation of the parameter's name.  Format is C-style variable naming convention
+    derivedFrom: []
+  - key: description
+    type: string
+    itemType: ''
+    description: Human readable representation of the parameter's name.  Typically used in rendered documentation referencing the parameter.
+    derivedFrom: []
+  - key: type
+    type: string
+    itemType: ''
+    description: Parameter type, may be a base type (e.g. string, int) or a path to a Data Structure
+    derivedFrom: []
+  - key: units
+    type: string
+    itemType: ''
+    description: Unit of measure for the specified quantity.
+    derivedFrom: []
+  - key: defaultValue
+    type: string
+    itemType: ''
+    description: String representation of default parameter value.
+    derivedFrom: []
+  - key: constraints
+    type: list
+    itemType: string
+    description: Each item in the list defines a restriction of the values the parameter may store (e.g., <= 10, enums = 3.14, 42, 1701).
+    derivedFrom: []
+derivedFrom: []

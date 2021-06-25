@@ -1,10 +1,10 @@
 elements:
   0-References/1-CreatingA_PackageJsonFile.yaml: &ref_0
     title: Creating a package.json file
-    url: 'https://docs.npmjs.com/creating-a-package-json-file'
+    url: https://docs.npmjs.com/creating-a-package-json-file
   0-References/2-AboutSemanticVersioning.yaml: &ref_1
     title: About semantic versioning
-    url: 'https://docs.npmjs.com/about-semantic-versioning'
+    url: https://docs.npmjs.com/about-semantic-versioning
   0-References/3-UsingSpdxLicenseListShortIdentifiers.yaml: &ref_2
     title: Using SPDX License List "short identifiers” in source files
     url: >-
@@ -268,7 +268,7 @@ elements:
     derivedFrom: []
   3-DataStructures/3-ActivityStep.yaml: &ref_13
     name: Activity Step
-    purpose: 'Defines a single step in an activity, e.g. assembly instructions.'
+    purpose: Defines a single step in an activity, e.g. assembly instructions.
     template: |
       summary: {{summary}}
       requiredParts: {{requiredParts}}
@@ -301,21 +301,71 @@ elements:
           (optional if step includes summary).  Format is up to user (e.g. list,
           ordered list, narrative text, some combination).
     derivedFrom: []
+  3-DataStructures/4-Parameter.yaml: &ref_14
+    name: Parameter
+    purpose: Defines a data structure for an input or output of a component function.
+    template: |
+      name: {{name}}
+      description: {{description}}
+      type: {{type}}
+      units: {{units}}
+      defaultValue: {{defaultValue}}
+      constraints: {{constraints}}
+    elements:
+      - key: name
+        type: string
+        itemType: ''
+        description: >-
+          Source representation of the parameter's name.  Format is C-style
+          variable naming convention
+        derivedFrom: []
+      - key: description
+        type: string
+        itemType: ''
+        description: >-
+          Human readable representation of the parameter's name.  Typically used
+          in rendered documentation referencing the parameter.
+        derivedFrom: []
+      - key: type
+        type: string
+        itemType: ''
+        description: >-
+          Parameter type, may be a base type (e.g. string, int) or a path to a
+          Data Structure
+        derivedFrom: []
+      - key: units
+        type: string
+        itemType: ''
+        description: Unit of measure for the specified quantity.
+        derivedFrom: []
+      - key: defaultValue
+        type: string
+        itemType: ''
+        description: String representation of default parameter value.
+        derivedFrom: []
+      - key: constraints
+        type: list
+        itemType: string
+        description: >-
+          Each item in the list defines a restriction of the values the
+          parameter may store (e.g., <= 10, enums = 3.14, 42, 1701).
+        derivedFrom: []
+    derivedFrom: []
 package:
   name: dof
   version: 0.1.6
   description: Distributed OSHW Framework (DOF)
   keywords:
     - oshw
-  repository: 'https://github.com/Mach30/dof.git'
-  homepage: 'http://dof.sliderule.io'
+  repository: https://github.com/Mach30/dof.git
+  homepage: http://dof.sliderule.io
   author: J. Simmons <jrs@mach30.org>
   license: CC-BY-4.0
   dependencies:
     js-yaml: ^3.12.0
     liquidjs: ^6.1.1
     minimist: ^1.2.0
-generationDate: 3/12/2019
+generationDate: 6/25/2021
 0-References:
   - *ref_0
   - *ref_1
@@ -334,3 +384,4 @@ generationDate: 3/12/2019
   - *ref_11
   - *ref_12
   - *ref_13
+  - *ref_14
