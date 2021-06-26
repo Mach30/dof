@@ -1,7 +1,7 @@
 = Distributed OSHW Framework (DOF)
 J. Simmons <jrs@mach30.org>
 :revnumber: v0.1.6
-:revdate: 3/12/2019
+:revdate: 6/25/2021
 :toc: left
 
 // github specific things
@@ -440,6 +440,96 @@ details: |
 |
 
 |Multiline formatted text string defining the details of the step (optional if step includes summary).  Format is up to user (e.g. list, ordered list, narrative text, some combination).
+
+| 
+
+
+
+|===
+
+
+
+
+=== Parameter
+*Purpose:* Defines a data structure for an input or output of a component function.
+
+.Parameter Template
+----
+name: {{name}}
+description: {{description}}
+type: {{type}}
+units: {{units}}
+defaultValue: {{defaultValue}}
+constraints: {{constraints}}
+
+----
+
+.Parameter Specification
+|===
+|Field |Type |Item Type |Description |Source
+
+
+|name
+|string
+
+|
+
+|Source representation of the parameter's name.  Format is C-style variable naming convention
+
+| 
+
+
+
+|description
+|string
+
+|
+
+|Human readable representation of the parameter's name.  Typically used in rendered documentation referencing the parameter.
+
+| 
+
+
+
+|type
+|string
+
+|
+
+|Parameter type, may be a base type (e.g. string, int) or a path to a Data Structure
+
+| 
+
+
+
+|units
+|string
+
+|
+
+|Unit of measure for the specified quantity.
+
+| 
+
+
+
+|defaultValue
+|string
+
+|
+
+|String representation of default parameter value.
+
+| 
+
+
+
+|constraints
+|list
+
+|string
+
+|Each item in the list defines a restriction of the values the parameter may store (e.g., <= 10, enums = 3.14, 42, 1701).
 
 | 
 
