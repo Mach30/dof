@@ -444,7 +444,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <span id="author" class="author">J. Simmons</span><br>
 <span id="email" class="email"><a href="mailto:jrs@mach30.org">jrs@mach30.org</a></span><br>
 <span id="revnumber">version v0.1.6,</span>
-<span id="revdate">6/25/2021</span>
+<span id="revdate">8/6/2021</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -471,6 +471,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_component_list_item">Component List Item</a></li>
 <li><a href="#_activity_step">Activity Step</a></li>
 <li><a href="#_parameter">Parameter</a></li>
+<li><a href="#_function">Function</a></li>
 </ul>
 </li>
 </ul>
@@ -485,7 +486,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li>
 <p>Simmons &lt;<a href="mailto:jrs@mach30.org">jrs@mach30.org</a>&gt;
 :revnumber: v0.1.6
-:revdate: 6/25/2021</p>
+:revdate: 8/6/2021</p>
 </li>
 </ol>
 </div>
@@ -735,6 +736,7 @@ author: {{author}}
 dependencies: {{dependencies}}
 components: {{components}}
 parts: {{parts}}
+functions: {{functions}}
 tools: {{tools}}
 precautions: {{precautions}}
 assemblySteps: {{assemblySteps}}</pre>
@@ -852,6 +854,13 @@ assemblySteps: {{assemblySteps}}</pre>
 <td class="tableblock halign-left valign-top"><p class="tableblock">dictionary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Component List Item</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Listing of the component&#8217;s parts (and substitutions) defined as sub-components.  Key = part&#8217;s id.  Value = part&#8217;s key data.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">functions</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">list</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Function</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Listing of component functions.</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -1127,13 +1136,77 @@ constraints: {{constraints}}</pre>
 </tbody>
 </table>
 </div>
+<div class="sect2">
+<h3 id="_function">Function</h3>
+<div class="paragraph">
+<p><strong>Purpose:</strong> Defines a data structure for a component function.</p>
+</div>
+<div class="listingblock">
+<div class="title">Function Template</div>
+<div class="content">
+<pre>name: {{name}}
+description: {{description}}
+inputs: {{inputs}}
+outputs: {{outputs}}</pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 5. Function Specification</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Item Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Source representation of the function&#8217;s name.  Format is C-style function declaration naming convention</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Human readable representation of the function&#8217;s name.  Typically used in rendered documentation referencing the function.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">inputs</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">list</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Parameter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Listing of acceptable input parameters by this function.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">outputs</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">list</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Parameter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Listing of expected output parameters from this function.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
 Version v0.1.6<br>
-Last updated 2021-08-06 21:31:25 UTC
+Last updated 2021-08-06 21:35:42 UTC
 </div>
 </div>
 </body>
