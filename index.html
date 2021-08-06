@@ -444,18 +444,18 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <span id="author" class="author">J. Simmons</span><br>
 <span id="email" class="email"><a href="mailto:jrs@mach30.org">jrs@mach30.org</a></span><br>
 <span id="revnumber">version v0.1.6,</span>
-<span id="revdate">3/12/2019</span>
+<span id="revdate">6/25/2021</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
+<ul class="sectlevel0">
+<li><a href="#_distributed_oshw_framework_dof">Distributed OSHW Framework (DOF)</a>
 <ul class="sectlevel1">
-<li><a href="#_introduction">Introduction</a>
-<ul class="sectlevel2">
+<li><a href="#_introduction">Introduction</a></li>
+<li><a href="#_the_pillars_of_the_dof">The Pillars of the DOF</a></li>
 <li><a href="#_methodology_documentation">Methodology Documentation</a></li>
 <li><a href="#_related_projects">Related Projects</a></li>
 <li><a href="#_further_reading">Further Reading</a></li>
-</ul>
-</li>
 <li><a href="#_stakeholder_needs">Stakeholder Needs</a></li>
 <li><a href="#_user_stories">User Stories</a>
 <ul class="sectlevel2">
@@ -470,12 +470,25 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_component">Component</a></li>
 <li><a href="#_component_list_item">Component List Item</a></li>
 <li><a href="#_activity_step">Activity Step</a></li>
+<li><a href="#_parameter">Parameter</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 <div id="content">
+<h1 id="_distributed_oshw_framework_dof" class="sect0">Distributed OSHW Framework (DOF)</h1>
+<div class="olist upperalpha">
+<ol class="upperalpha">
+<li>
+<p>Simmons &lt;<a href="mailto:jrs@mach30.org">jrs@mach30.org</a>&gt;
+:revnumber: v0.1.6
+:revdate: 6/25/2021</p>
+</li>
+</ol>
+</div>
 <div class="sect1">
 <h2 id="_introduction">Introduction</h2>
 <div class="sectionbody">
@@ -504,17 +517,62 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="paragraph">
 <p>Note how developing a methodology is different from identifying best practices, covering case studies, and creating definitions.  A methodology is something one follows; it is a fully defined process.  And by targeting tool independence, we can aim for developing a solution that will stand the test of time, just as version control methods have lasted through cvs, svn, and now git.</p>
 </div>
-<div class="sect2">
-<h3 id="_methodology_documentation">Methodology Documentation</h3>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_pillars_of_the_dof">The Pillars of the DOF</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>The methodology is being modeled in a series of YAML files under the <code>architecture</code> folder.  A script is then used to generate this readme and the DOF architecture document (located in the <code>dist</code> folder).  See the <code>docs</code> folder for mataterial on the format of the architecture YAML files.</p>
+<p>The Distributed OSHW Framework (DOF) is built upon 4 pillars.  All design decisions for DOF are ultimately derived from one or more of these pillars.</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">1: OSHW Definition</div>
+<div class="paragraph">
+<p>OSHW projects should be developed and shared in accordance to the <a href="https://www.oshwa.org/definition/">OSHW Definition</a>.</p>
+</div>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">2: OSHW Certification</div>
+<div class="paragraph">
+<p>OSHW projects should be developed and shared in accordance to the <a href="https://certification.oshwa.org/process.html">OSHW Certification process</a>.</p>
+</div>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">3: OSHW should be like OSS</div>
+<div class="paragraph">
+<p>Open Source Hardware should be like Open Source Software to the greatest degree possible (e.g. sharing, development, licensing).</p>
+</div>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">4: OSHW Source Definition</div>
+<div class="paragraph">
+<p>The source of an OSHW project is its:  <strong>Bill of Materials Data</strong> (list of components and counts covering all parts which must be purchased to build the project), <strong>Assembly Instructions</strong> (complete list of instructions to build the project from its purchased parts), and <strong>Supporting Documentation</strong> (e.g. design files, schematics, operating instructions)</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_methodology_documentation">Methodology Documentation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The methodology is being modeled in a series of YAML files under the <code>architecture</code> folder.  A script is then used to generate this readme and the DOF architecture document (located in the <code>dist</code> folder).  See the <code>docs</code> folder for material on the format of the architecture YAML files.</p>
 </div>
 <div class="paragraph">
 <p>Please feel free to join the conversation by posting questions/comments as issues in the <a href="http://dof.sliderule.io">DOF repository</a>.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_related_projects">Related Projects</h3>
+</div>
+<div class="sect1">
+<h2 id="_related_projects">Related Projects</h2>
+<div class="sectionbody">
 <div class="ulist">
 <div class="title">Mach 30 Related Projects</div>
 <ul>
@@ -542,15 +600,16 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_further_reading">Further Reading</h3>
+</div>
+<div class="sect1">
+<h2 id="_further_reading">Further Reading</h2>
+<div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
 <p><a href="https://www.pearson.com/us/higher-education/product/Gibb-Building-Open-Source-Hardware-DIY-Manufacturing-for-Hackers-and-Makers/9780133373905.html">Building Open Source Hardware: DIY Manufacturing for Hackers and Makers</a> by Alicia Gibb</p>
 </li>
 </ul>
-</div>
 </div>
 </div>
 </div>
@@ -988,13 +1047,93 @@ details: |
 </tbody>
 </table>
 </div>
+<div class="sect2">
+<h3 id="_parameter">Parameter</h3>
+<div class="paragraph">
+<p><strong>Purpose:</strong> Defines a data structure for an input or output of a component function.</p>
+</div>
+<div class="listingblock">
+<div class="title">Parameter Template</div>
+<div class="content">
+<pre>name: {{name}}
+description: {{description}}
+type: {{type}}
+units: {{units}}
+defaultValue: {{defaultValue}}
+constraints: {{constraints}}</pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 4. Parameter Specification</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Item Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Source representation of the parameter&#8217;s name.  Format is C-style variable naming convention</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Human readable representation of the parameter&#8217;s name.  Typically used in rendered documentation referencing the parameter.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Parameter type, may be a base type (e.g. string, int) or a path to a Data Structure</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">units</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unit of measure for the specified quantity.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">defaultValue</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String representation of default parameter value.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">constraints</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">list</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Each item in the list defines a restriction of the values the parameter may store (e.g., &#8656; 10, enums = 3.14, 42, 1701).</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
 Version v0.1.6<br>
-Last updated 2020-12-14 00:51:05 UTC
+Last updated 2021-08-06 21:31:25 UTC
 </div>
 </div>
 </body>
