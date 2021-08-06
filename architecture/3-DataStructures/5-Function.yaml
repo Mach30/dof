@@ -1,0 +1,29 @@
+name: Function
+purpose: Defines a data structure for a component function.
+template: |
+  name: {{name}}
+  description: {{description}}
+  inputs: {{inputs}}
+  outputs: {{outputs}}
+elements:
+  - key: name
+    type: string
+    itemType: ''
+    description: Source representation of the function's name.  Format is C-style function declaration naming convention
+    derivedFrom: []
+  - key: description
+    type: string
+    itemType: ''
+    description: Human readable representation of the function's name.  Typically used in rendered documentation referencing the function.
+    derivedFrom: []
+  - key: inputs
+    type: list
+    itemType: 3-DataStructures/4-Parameter.yaml
+    description: Listing of acceptable input parameters by this function.
+    derivedFrom: []
+  - key: outputs
+    type: list
+    itemType: 3-DataStructures/4-Parameter.yaml
+    description: Listing of expected output parameters from this function.
+    derivedFrom: []
+derivedFrom: []

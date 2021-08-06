@@ -1,7 +1,7 @@
 = Distributed OSHW Framework (DOF)
 J. Simmons <jrs@mach30.org>
 :revnumber: v0.1.6
-:revdate: 6/25/2021
+:revdate: 8/6/2021
 
 // github specific things
 ifdef::env-github[]
