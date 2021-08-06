@@ -10,6 +10,7 @@ template: |
   components: {{components}}
   parts: {{parts}}
   functions: {{functions}}
+  interfaces: {{interfaces}}
   tools: {{tools}}
   precautions: {{precautions}}
   assemblySteps: {{assemblySteps}}
@@ -65,6 +66,10 @@ elements:
     type: list
     itemType: 3-DataStructures/5-Function.yaml
     description: Listing of component functions.
+  - key: interfaces
+    type: dictionary
+    itemType: 3-DataStructures/6-Interface.yaml
+    description: Listing of the component's internal interfaces.  Key = interface's id.  Value = interface's key data.
     derivedFrom: []
   - key: tools
     type: dictionary
