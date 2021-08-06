@@ -62,9 +62,9 @@ elements:
     description: Listing of the component's parts (and substitutions) defined as sub-components.  Key = part's id.  Value = part's key data.
     derivedFrom: []
   - key: functions
-    type: dictionary
+    type: list
     itemType: 3-DataStructures/5-Function.yaml
-    description: Listing of component functions.  Key = function name.  Value = function's key data.
+    description: Listing of component functions.
     derivedFrom: []
   - key: tools
     type: dictionary
