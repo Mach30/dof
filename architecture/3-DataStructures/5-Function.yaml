@@ -17,13 +17,13 @@ elements:
     description: Human readable representation of the function's name.  Typically used in rendered documentation referencing the function.
     derivedFrom: []
   - key: inputs
-    type: dictionary
+    type: list
     itemType: 3-DataStructures/4-Parameter.yaml
-    description: Listing of acceptable input parameters by this function.  Key = parameter's name.  Value = parameter's key data.
+    description: Listing of acceptable input parameters by this function.
     derivedFrom: []
   - key: outputs
-    type: dictionary
+    type: list
     itemType: 3-DataStructures/4-Parameter.yaml
-    description: Listing of expected output parameters from this function.  Key = parameter's name.  Value = parameter's key data.
+    description: Listing of expected output parameters from this function.
     derivedFrom: []
 derivedFrom: []
