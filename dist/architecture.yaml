@@ -102,6 +102,7 @@ elements:
       dependencies: {{dependencies}}
       components: {{components}}
       parts: {{parts}}
+      functions: {{functions}}
       tools: {{tools}}
       precautions: {{precautions}}
       assemblySteps: {{assemblySteps}}
@@ -169,6 +170,11 @@ elements:
         description: >-
           Listing of the component's parts (and substitutions) defined as
           sub-components.  Key = part's id.  Value = part's key data.
+        derivedFrom: []
+      - key: functions
+        type: list
+        itemType: 3-DataStructures/5-Function.yaml
+        description: Listing of component functions.
         derivedFrom: []
       - key: tools
         type: dictionary
@@ -351,6 +357,40 @@ elements:
           parameter may store (e.g., <= 10, enums = 3.14, 42, 1701).
         derivedFrom: []
     derivedFrom: []
+  3-DataStructures/5-Function.yaml: &ref_15
+    name: Function
+    purpose: Defines a data structure for a component function.
+    template: |
+      name: {{name}}
+      description: {{description}}
+      inputs: {{inputs}}
+      outputs: {{outputs}}
+    elements:
+      - key: name
+        type: string
+        itemType: ''
+        description: >-
+          Source representation of the function's name.  Format is C-style
+          function declaration naming convention
+        derivedFrom: []
+      - key: description
+        type: string
+        itemType: ''
+        description: >-
+          Human readable representation of the function's name.  Typically used
+          in rendered documentation referencing the function.
+        derivedFrom: []
+      - key: inputs
+        type: list
+        itemType: 3-DataStructures/4-Parameter.yaml
+        description: Listing of acceptable input parameters by this function.
+        derivedFrom: []
+      - key: outputs
+        type: list
+        itemType: 3-DataStructures/4-Parameter.yaml
+        description: Listing of expected output parameters from this function.
+        derivedFrom: []
+    derivedFrom: []
 package:
   name: dof
   version: 0.1.6
@@ -361,11 +401,8 @@ package:
   homepage: http://dof.sliderule.io
   author: J. Simmons <jrs@mach30.org>
   license: CC-BY-4.0
-  dependencies:
-    js-yaml: ^3.12.0
-    liquidjs: ^6.1.1
-    minimist: ^1.2.0
-generationDate: 6/25/2021
+  dependencies: {}
+generationDate: 8/6/2021
 0-References:
   - *ref_0
   - *ref_1
@@ -385,3 +422,4 @@ generationDate: 6/25/2021
   - *ref_12
   - *ref_13
   - *ref_14
+  - *ref_15

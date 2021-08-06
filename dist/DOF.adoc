@@ -1,7 +1,7 @@
 = Distributed OSHW Framework (DOF)
 J. Simmons <jrs@mach30.org>
 :revnumber: v0.1.6
-:revdate: 6/25/2021
+:revdate: 8/6/2021
 :toc: left
 
 // github specific things
@@ -106,6 +106,7 @@ author: {{author}}
 dependencies: {{dependencies}}
 components: {{components}}
 parts: {{parts}}
+functions: {{functions}}
 tools: {{tools}}
 precautions: {{precautions}}
 assemblySteps: {{assemblySteps}}
@@ -214,6 +215,17 @@ a|
 |Component List Item
 
 |Listing of the component's parts (and substitutions) defined as sub-components.  Key = part's id.  Value = part's key data.
+
+| 
+
+
+
+|functions
+|list
+
+|Function
+
+|Listing of component functions.
 
 | 
 
@@ -530,6 +542,72 @@ constraints: {{constraints}}
 |string
 
 |Each item in the list defines a restriction of the values the parameter may store (e.g., <= 10, enums = 3.14, 42, 1701).
+
+| 
+
+
+
+|===
+
+
+
+
+=== Function
+*Purpose:* Defines a data structure for a component function.
+
+.Function Template
+----
+name: {{name}}
+description: {{description}}
+inputs: {{inputs}}
+outputs: {{outputs}}
+
+----
+
+.Function Specification
+|===
+|Field |Type |Item Type |Description |Source
+
+
+|name
+|string
+
+|
+
+|Source representation of the function's name.  Format is C-style function declaration naming convention
+
+| 
+
+
+
+|description
+|string
+
+|
+
+|Human readable representation of the function's name.  Typically used in rendered documentation referencing the function.
+
+| 
+
+
+
+|inputs
+|list
+
+|Parameter
+
+|Listing of acceptable input parameters by this function.
+
+| 
+
+
+
+|outputs
+|list
+
+|Parameter
+
+|Listing of expected output parameters from this function.
 
 | 
 
