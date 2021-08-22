@@ -10,6 +10,9 @@ template: |
   components: {{components}}
   parts: {{parts}}
   functions: {{functions}}
+  interfaceDefinitions: {{interfaceDefinitions}}
+  interfaceBoundaries: {{interfaceBoundaries}}
+  interfaceConnections: {{interfaceConnections}}
   tools: {{tools}}
   precautions: {{precautions}}
   assemblySteps: {{assemblySteps}}
@@ -65,6 +68,20 @@ elements:
     type: list
     itemType: 3-DataStructures/5-Function.yaml
     description: Listing of component functions.
+  - key: interfaceDefinitions
+    type: dictionary
+    itemType: 3-DataStructures/6-InterfaceDefinition.yaml
+    description: Listing of the component's internal interface definitions.  Key = interface definition's id.  Value = interface definition's key data.
+    derivedFrom: []
+  - key: interfaceBoundaries
+    type: dictionary
+    itemType: 3-DataStructures/7-InterfaceBoundaries.yaml
+    description: Listing of the component's internal interface boundaries.  Key = interface boundary's id.  Value = interface boundary's key data.
+    derivedFrom: []
+  - key: interfaceConnections
+    type: dictionary
+    itemType: 3-DataStructures/8-InterfaceConnections.yaml
+    description: Listing of the component's internal interface connections.  Key = interface connection's id.  Value = interface connection's key data.
     derivedFrom: []
   - key: tools
     type: dictionary
