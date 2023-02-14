@@ -10,6 +10,7 @@ template: |
   options: {{options}}
   selectedOption: {{selectedOption}}
   notes: {{notes}}
+  interfaces: {{interfaces}}
 elements:
   - key: id
     type: string
@@ -55,5 +56,10 @@ elements:
     type: string
     itemType: ''
     description: Developer comments on this part or tool.
+    derivedFrom: []
+  - key: interfaces
+    type: list
+    itemType: 3-DataStructures/6-InterfaceListItem.yaml'
+    description: Listing the interfaces of this part or tool.
     derivedFrom: []
 derivedFrom: []
