@@ -60,6 +60,6 @@ elements:
   - key: interfaces
     type: list
     itemType: 3-DataStructures/6-InterfaceListItem.yaml'
-    description: Listing the interfaces of this part or tool.
+    description: Listing of interfaces for the part or tool.
     derivedFrom: []
 derivedFrom: []

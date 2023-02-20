@@ -1,4 +1,4 @@
-name: Component List Item
+name: Interface List Item
 purpose: Identifies an interface on a part or tool.
 template: |
   id: {{id}}
@@ -8,12 +8,12 @@ elements:
   - key: id
     type: string
     itemType: ''
-    description: Part's ID (or part number).  Format = single word, only lowercase letters, and may contain hyphens and underscores.
+    description: Inteface's ID.  Format = single word, only lowercase letters, and may contain hyphens and underscores.
     derivedFrom: []
   - key: description
     type: string
     itemType: ''
-    description: Human readable name for the part (not name of the selected component for this part).
+    description: Human readable name for the interface.
     derivedFrom: []
   - key: descriptionLong
     type: string
