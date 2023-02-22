@@ -1,0 +1,23 @@
+name: Interface List Item
+purpose: Identifies an interface on a part or tool.
+template: |
+  id: {{id}}
+  description: {{description}}
+  descriptionLong: {{descriptionLong}}
+elements:
+  - key: id
+    type: string
+    itemType: ''
+    description: Inteface's ID.  Format = single word, only lowercase letters, and may contain hyphens and underscores.
+    derivedFrom: []
+  - key: description
+    type: string
+    itemType: ''
+    description: Human readable name for the interface.
+    derivedFrom: []
+  - key: descriptionLong
+    type: string
+    itemType: ''
+    description: Computed value = "{{id}}:\ {{description}}".  Used as shortcut in documentation.
+    derivedFrom: []
+derivedFrom: []
