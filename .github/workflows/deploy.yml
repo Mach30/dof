@@ -10,6 +10,9 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
+        with:
+          submodules: recursive  # Fetch submodules
+          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
 
       - name: Build
         run: bash build.sh
