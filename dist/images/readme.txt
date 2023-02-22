@@ -1,1 +1,0 @@
-This directory contains images utilized by the generated adoc files.
