@@ -1,7 +1,7 @@
 node_modules/
 
-# build script generated files
-public/
+# artifacts directory
+dist/
 
 # github action keys
 gh-pages*
