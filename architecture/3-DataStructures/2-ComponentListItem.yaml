@@ -58,8 +58,8 @@ elements:
     description: Developer comments on this part or tool.
     derivedFrom: []
   - key: interfaces
-    type: list
+    type: dictionary
     itemType: 3-DataStructures/6-InterfaceListItem.yaml'
-    description: Listing of interfaces for the part or tool.
+    description: Listing of interfaces for the part or tool.  Key = interface's id.  Value = interface's key data.
     derivedFrom: []
 derivedFrom: []
