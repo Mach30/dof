@@ -13,6 +13,7 @@ template: |
   tools: {{tools}}
   precautions: {{precautions}}
   assemblySteps: {{assemblySteps}}
+  junctions: {{junctions}}
 elements:
   - key: name
     type: string
@@ -80,5 +81,10 @@ elements:
     type: list
     itemType: 3-DataStructures/3-ActivityStep.yaml
     description: Sequence of steps required to assemble the component.
+    derivedFrom: []
+  - key: junctions
+    type: list
+    itemType: 3-DataStructures/7-JunctionListItem.yaml'
+    description: Listing of junctions for the interface.
     derivedFrom: []
 derivedFrom: []

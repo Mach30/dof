@@ -1,0 +1,23 @@
+name: Junction List Item
+purpose: Identifies a junction for the interface.
+template: |
+  id: {{id}}
+  description: {{description}}
+  descriptionLong: {{descriptionLong}}
+elements:
+  - key: id
+    type: string
+    itemType: ''
+    description: Junction's ID.  Format = single word, only lowercase letters, and may contain hyphens and underscores.
+    derivedFrom: []
+  - key: description
+    type: string
+    itemType: ''
+    description: Human readable name for the junction.
+    derivedFrom: []
+  - key: descriptionLong
+    type: string
+    itemType: ''
+    description: Computed value = "{{id}}:\ {{description}}".  Used as shortcut in documentation.
+    derivedFrom: []
+derivedFrom: []
